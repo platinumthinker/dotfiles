@@ -12,12 +12,15 @@ Bundle 'The-NERD-Commenter'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/jimenezrick/vimerl.git'
 Bundle 'snipMate'
+Bundle 'git://github.com/scrooloose/nerdtree.git'
 
 "let g:solarized_hitrail=1    "default value is 0
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
 colorscheme solarized 
 set background=dark
+set cursorline
+set cursorcolumn
 
 syntax enable
 
@@ -52,12 +55,12 @@ set showcmd
 set linebreak
 set dy=lastline
 set number
-set wrap
+"set wrap
 set colorcolumn=80
 set shiftwidth=4
 set smartindent
 set smarttab
-"set expandtab
+set expandtab
 set mouse=a
 set clipboard=unnamedplus
 
@@ -73,9 +76,13 @@ let g:clang_hl_errors=1
 "let g:clang_library_path="/usr/lib/llvm-3.2/"
 "let g:clang_complete_copen=1
 
+"let erlang_folding=1
+"let erlang_show_errors=0
+
 set runtimepath+=$HOME/.vim/vimerl
 autocmd Filetype erlang setlocal omnifunc=erlang_complete#Complete
 
+map <F2> :NERDTreeToggle<CR>
 
 if version >= 700
     set history=64
