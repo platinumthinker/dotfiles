@@ -222,9 +222,9 @@ set clipboard=unnamedplus
 set completeopt=menu,menuone,longest
 set pumheight=15
 
-let g:clang_debug=1
-let g:clang_complete_copen=1
-let g:clang_hl_errors=1
+"let g:clang_debug=1
+"let g:clang_complete_copen=1
+let g:clang_hl_errors=0
 "let g:clang_conceal_snippets=0
 "let g:clang_complete_auto=1
 "let g:clang_use_library=1
@@ -234,11 +234,27 @@ let g:clang_hl_errors=1
 "let erlang_folding=1
 "let erlang_show_errors=0
 
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
+
 set runtimepath+=$HOME/.vim/vimerl
 
 inoremap jj <ESC>
-map <F2> :NERDTreeToggle<CR>
-map <F8> :TagbarToggle<CR>
+map <BS> :NERDTreeToggle<CR>
+"Next error
+nnoremap <F2> :lnext<CR> 
+inoremap <F2> :lnext<CR> 
+"Previous error
+nnoremap <F3> :lprevious<CR>
+inoremap <F3> :lprevious<CR>
+
+nnoremap <F8> :TagbarToggle<CR>
+inoremap <F8> :TagbarToggle<CR>
+map <tab> <C-p>
 
 if version >= 700
     set history=64
