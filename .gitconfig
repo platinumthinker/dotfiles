@@ -8,7 +8,7 @@
 	ui = always
 [merge]
 	tool = /home/thinker/scripts/vimdiff.sh
-[mergetool "diffconflicts"]
+[mergetool "vimdiff.sh"]
 	cmd = /home/thinker/scripts/vimdiff.sh vim $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
 	keepBackup = false
