@@ -37,7 +37,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 "Bar of function in open file (from ctags)
 Bundle 'majutsushi/tagbar'
-
+"Markdown folding
+Bundle 'nelstrom/vim-markdown-folding'
 
 "============================STATUS BAR SETTINGS UP======================
 set laststatus=2
@@ -174,7 +175,6 @@ let g:solarized_termcolors=256
 let g:solarized_hitrail=1
 colorscheme solarized
 set background=dark
-call togglebg#map("<F5>")
 "========================================================================
 
 
@@ -255,6 +255,19 @@ inoremap <F3> :lprevious<CR>
 nnoremap <F8> :TagbarToggle<CR>
 inoremap <F8> :TagbarToggle<CR>
 map <tab> <C-p>
+
+set wildmode=list:longest,full
+set wildmenu 
+set wildignore+=.git,.svn
+
+"Markdown fix
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
+
+"Folds
+set foldmethod=syntax
+let g:markdown_fold_style = 'nested'
+
+setlocal spell spelllang=en_us
 
 if version >= 700
     set history=64
