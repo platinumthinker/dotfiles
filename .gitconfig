@@ -1,3 +1,16 @@
 [user]
 	email = platinumthinker@gmail.com
 	name = platinumthinker
+[core]
+	editor = git
+	editor = /usr/bin/vim
+[color]
+	ui = always
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = /home/thinker/scripts/vimdiff.sh vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
+[push]
+	default = simple
