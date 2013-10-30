@@ -267,7 +267,7 @@ au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
 set foldmethod=syntax
 let g:markdown_fold_style = 'nested'
 
-setlocal spell spelllang=en_us
+"setlocal spell spelllang=en_us
 
 if version >= 700
     set history=64
