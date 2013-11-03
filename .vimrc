@@ -6,39 +6,39 @@ call vundle#rc()
 filetype plugin indent on
 
 "=================================VUNDLE REPO============================
-"Vundle selfupdate
+"""Vundle selfupdate
 Bundle 'gmarik/vundle'
-"LaTeX
+"""LaTeX
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'LaTeX-Box'
-"Sniplets
+"""Sniplets
 Bundle 'snipMate'
-"C/C++ autocomplite and show error
-Bundle 'clang-complete'
-"Fast toggle commets
+"""Fast toggle commets
 Bundle 'The-NERD-Commenter'
-"Git supports
+"""Git supports
 Bundle 'tpope/vim-fugitive'
-"Ctags supports
+"""Ctags supports
 Bundle 'vim-scripts/ctags.vim'
-"Color themes
+"""Color themes
 Bundle 'altercation/vim-colors-solarized'
-"Erlang autocomplite and show error
+"""Erlang autocomplite and show error
 "Bundle 'jimenezrick/vimerl'
-"Tree file viwer
+"""Tree file viwer
 Bundle 'scrooloose/nerdtree'
-"Ack supports
+"""Ack supports
 Bundle 'mileszs/ack.vim'
-"Status bar
+"""Status bar
 Bundle 'itchyny/lightline.vim'
-"Seacher
+"""Seacher
 Bundle 'kien/ctrlp.vim'
-"Super syntax
+"""Super syntax
 Bundle 'scrooloose/syntastic'
-"Bar of function in open file (from ctags)
+"""Bar of function in open file (from ctags)
 Bundle 'majutsushi/tagbar'
-"Markdown folding
+"""Markdown folding
 Bundle 'nelstrom/vim-markdown-folding'
+"""Autocomplite
+Bundle 'Valloric/YouCompleteMe'
 
 "============================STATUS BAR SETTINGS UP======================
 set laststatus=2
@@ -222,22 +222,13 @@ set clipboard=unnamedplus
 set completeopt=menu,menuone,longest
 set pumheight=15
 
-"let g:clang_debug=1
-"let g:clang_complete_copen=1
-let g:clang_hl_errors=0
-"let g:clang_conceal_snippets=0
-"let g:clang_complete_auto=1
-"let g:clang_use_library=1
-"let g:clang_library_path="/usr/lib/llvm-3.2/"
-"let g:clang_complete_copen=1
-
 "let erlang_folding=1
 "let erlang_show_errors=0
 
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
 
