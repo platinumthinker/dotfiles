@@ -9,12 +9,12 @@ filetype plugin indent on
 "Vundle selfupdate
 Bundle 'gmarik/vundle'
 "LaTeX
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-Bundle 'LaTeX-Box'
+"Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+"Bundle 'LaTeX-Box'
 "Sniplets
 Bundle 'snipMate'
 "C/C++ autocomplite and show error
-Bundle 'clang-complete'
+"Bundle 'clang-complete'
 "Fast toggle commets
 Bundle 'The-NERD-Commenter'
 "Git supports
@@ -32,12 +32,15 @@ Bundle 'mileszs/ack.vim'
 "Status bar
 Bundle 'itchyny/lightline.vim'
 "Seacher
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 "Super syntax
 Bundle 'scrooloose/syntastic'
 "Bar of function in open file (from ctags)
 Bundle 'majutsushi/tagbar'
-
+"""Autocomplite
+Bundle 'Valloric/YouCompleteMe'
+"""Ack
+Bundle 'tyok/nerdtree-ack'
 
 "============================STATUS BAR SETTINGS UP======================
 set laststatus=2
@@ -191,7 +194,7 @@ set hls
 " использовать инкрементальный поиск
 set is
 " ширина текста 
-set textwidth=80
+set textwidth=120
 " минимальная высота окна пусть будет 0 (по умолчанию - 1)
 set winminheight=0
 " всегда делать активное окно максимального размера
@@ -211,7 +214,7 @@ set linebreak
 set dy=lastline
 set number
 "set wrap
-set colorcolumn=80
+set colorcolumn=120
 set shiftwidth=4
 set smartindent
 set smarttab
