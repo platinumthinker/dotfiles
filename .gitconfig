@@ -9,7 +9,7 @@
 [merge]
 	tool = diffconflicts
 [mergetool "diffconflicts"]
-	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+    cmd = /home/thinker/scripts/vimdiff.sh $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
 	keepBackup = false
 [push]
