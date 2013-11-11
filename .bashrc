@@ -8,7 +8,7 @@ export CDPATH=$CDPATH:.:~:/home/thinker/work/:/home/thinker/work/biser/projects/
 export TERM=xterm-256color
 ulimit -c unlimited
 export MANOPT="-L ru"
-#fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -92,9 +92,9 @@ fi
 
 # some more ls aliases
 alias py='python'
-alias ll='ls -l'
-alias la='ls -la'
-alias l='ls'
+alias ll='ls -l --color=auto'
+alias la='ls -la --color=auto'
+alias l='ls --color=auto'
 alias v='vim'
 alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
