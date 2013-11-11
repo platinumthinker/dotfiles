@@ -191,7 +191,7 @@ set hls
 " использовать инкрементальный поиск
 set is
 " ширина текста 
-set textwidth=120
+set textwidth=80
 " минимальная высота окна пусть будет 0 (по умолчанию - 1)
 set winminheight=0
 " всегда делать активное окно максимального размера
@@ -211,7 +211,7 @@ set linebreak
 set dy=lastline
 set number
 "set wrap
-set colorcolumn=120
+set colorcolumn=80
 set shiftwidth=4
 set smartindent
 set smarttab

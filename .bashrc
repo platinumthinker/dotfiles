@@ -100,6 +100,7 @@ alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cal='ncal -b'
 alias ctags-erl='ctags --file-scope=no -R --languages=erlang --exclude=".git" --exclude="_build"'
+alias b='sinan clean && sinan dist && faxien ir'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
