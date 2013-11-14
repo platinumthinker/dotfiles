@@ -22,7 +22,7 @@ Bundle 'vim-scripts/ctags.vim'
 """Color themes
 Bundle 'altercation/vim-colors-solarized'
 """Erlang autocomplite and show error
-"Bundle 'jimenezrick/vimerl'
+Bundle 'oscarh/vimerl'
 """Tree file viwer
 Bundle 'scrooloose/nerdtree'
 """Ack supports
@@ -222,8 +222,13 @@ set clipboard=unnamedplus
 set completeopt=menu,menuone,longest
 set pumheight=15
 
-"let erlang_folding=1
-"let erlang_show_errors=0
+let erlang_folding=1
+let erlang_show_errors=0
+let	g:erlangHighlightBif=1 
+let g:erlangFoldSplitFunction=1
+let g:erlangManPath="/home/thinker/erlware/man"
+let g:erlangHighlightErrors=0
+
 
 let g:syntastic_check_on_open=0
 let g:syntastic_check_on_wq=0
@@ -232,8 +237,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
 
-set runtimepath+=$HOME/.vim/vimerl
-
+"=================================KEY BINDINGS===========================
 inoremap jj <ESC>
 map <BS> :NERDTreeToggle<CR>
 "Next error
@@ -243,9 +247,10 @@ inoremap <F2> :lnext<CR>
 nnoremap <F3> :lprevious<CR>
 inoremap <F3> :lprevious<CR>
 
-nnoremap <F8> :TagbarToggle<CR>
-inoremap <F8> :TagbarToggle<CR>
+nnoremap <F8> :Tagbar<CR>
+inoremap <F8> :Tagbar<CR>
 map <tab> <C-p>
+"========================================================================
 
 set wildmode=list:longest,full
 set wildmenu 
