@@ -3,7 +3,7 @@
 # for examples
 export PATH=/home/thinker/erlware/bin:$PATH
 
-export CDPATH=$CDPATH:.:~:/home/thinker/work/:/home/thinker/work/biser/projects/
+export CDPATH=$CDPATH:.:/home/thinker/:/home/thinker/work/:/home/thinker/work/biser/projects/
 
 export TERM=xterm-256color
 ulimit -c unlimited

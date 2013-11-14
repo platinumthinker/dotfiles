@@ -260,6 +260,11 @@ let g:markdown_fold_style = 'nested'
 
 "setlocal spell spelllang=en_us
 
+let &cdpath = ',' . substitute(substitute($CDPATH, '[, ]', '\\\0', 'g'), ':', ',', 'g')
+
+set title
+let g:tagbar_autofocus = 1
+
 if version >= 700
     set history=64
     set undolevels=128
