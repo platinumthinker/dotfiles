@@ -4,7 +4,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin indent on
-
 "=================================VUNDLE REPO============================
 """Vundle selfupdate
 Bundle 'gmarik/vundle'
@@ -181,6 +180,7 @@ set background=dark
 syntax enable
 filetype plugin on
 set helplang=ru,en
+set title
 set cursorline
 set cursorcolumn
 set nocompatible
@@ -237,6 +237,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
 
+let g:tagbar_autofocus = 1
+
 "=================================KEY BINDINGS===========================
 inoremap jj <ESC>
 map <BS> :NERDTreeToggle<CR>
@@ -267,8 +269,15 @@ let g:markdown_fold_style = 'nested'
 
 let &cdpath = ',' . substitute(substitute($CDPATH, '[, ]', '\\\0', 'g'), ':', ',', 'g')
 
-set title
-let g:tagbar_autofocus = 1
+
+"===============================FIX SLOW SCROLL==========================
+set ttyfast 
+set ttyscroll=3
+set lazyredraw 
+
+set synmaxcol=128
+syntax sync minlines=256
+"========================================================================
 
 if version >= 700
     set history=64
