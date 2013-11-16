@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for thinker on Wed Aug 28 18:36:40 2013.
+# Written by xscreensaver-demo 5.15 for thinker on Thu Oct 31 18:02:41 2013.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:20:00
@@ -94,7 +94,7 @@ programs:								      \
 -				starfish -root				    \n\
 -				strange -root				    \n\
 -				swirl -root				    \n\
-				triangle -root				    \n\
+-				triangle -root				    \n\
 -				xjack -root				    \n\
 -				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
@@ -157,7 +157,7 @@ programs:								      \
 - GL: 				starwars -root				    \n\
 - GL: 				stonerview -root			    \n\
 -				vermiculate -root			    \n\
-				whirlwindwarp -root -points 697		    \n\
+-				whirlwindwarp -root -points 697		    \n\
 -				zoom -root				    \n\
 -				anemone -root				    \n\
 -				apollonian -root			    \n\
@@ -229,7 +229,7 @@ programs:								      \
 -				boxfit -root				    \n\
 - GL: 				carousel -root				    \n\
 -				celtic -root				    \n\
-  GL: 				crackberg -root -delay 16949 -visibility      \
+- GL: 				crackberg -root -delay 16949 -visibility      \
 				  0.7424 -nsubdivs 5 -color ice		    \n\
 - GL: 				cube21 -root				    \n\
 -				fiberlamp -root				    \n\

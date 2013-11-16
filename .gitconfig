@@ -9,8 +9,8 @@
 [merge]
 	tool = diffconflicts
 [mergetool "diffconflicts"]
-	cmd = /home/thinker/scripts/vimdiff.sh vim $BASE $LOCAL $REMOTE $MERGED
+    cmd = /home/thinker/scripts/diffconflicts gvim $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
-	keepBackup = false
+    keepBackup = false
 [push]
 	default = simple

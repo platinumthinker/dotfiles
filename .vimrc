@@ -4,7 +4,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin indent on
-
 "=================================VUNDLE REPO============================
 Bundle 'guns/xterm-color-table.vim'
 """Vundle selfupdate
@@ -23,7 +22,7 @@ Bundle 'vim-scripts/ctags.vim'
 """Color themes
 Bundle 'platinumthinker/vim-colors-solarized'
 """Erlang autocomplite and show error
-"Bundle 'jimenezrick/vimerl'
+Bundle 'oscarh/vimerl'
 """Tree file viwer
 Bundle 'scrooloose/nerdtree'
 """Ack supports
@@ -31,7 +30,7 @@ Bundle 'mileszs/ack.vim'
 """Status bar
 Bundle 'itchyny/lightline.vim'
 """Seacher
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 """Super syntax
 Bundle 'scrooloose/syntastic'
 """Bar of function in open file (from ctags)
@@ -41,18 +40,10 @@ Bundle 'nelstrom/vim-markdown-folding'
 """Autocomplite
 Bundle 'Valloric/YouCompleteMe'
 
-"==============================SOLORIZED THEME UP========================
-"if !has('gui_running')
-    let g:Powerline_symbols = 'fancy'
-"endif
-colorscheme solarized
-set background=dark
-"========================================================================
-
-
 syntax enable
 filetype plugin on
 set helplang=ru,en
+set title
 set cursorline
 set cursorcolumn
 set nocompatible
@@ -73,6 +64,107 @@ set winminheight=0
 "set guifont=courier_new:h10:cRUSSIAN
 " настраиваю для работы с русскими словами (чтобы w, b, * понимали
 " русские слова)
+set iskeyword=@,48-57,_,192-255
+" задать размер табуляции в четыре пробела
+set ts=4
+" отображение выполняемой команды
+set showcmd 
+" перенос по словам, а не по буквам
+set linebreak
+set dy=lastline
+set number
+"set wrap
+set colorcolumn=80
+set shiftwidth=4
+set smartindent
+set smarttab
+set expandtab
+set mouse=a
+set clipboard=unnamedplus
+
+set completeopt=menu,menuone,longest
+set pumheight=15
+
+let erlang_folding=1
+let erlang_show_errors=0
+let	g:erlangHighlightBif=1 
+let g:erlangFoldSplitFunction=1
+"let g:erlangManPath="/home/thinker/erlware/man"
+let g:erlangHighlightErrors=0
+
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
+
+let g:tagbar_autofocus = 1
+
+"=================================KEY BINDINGS===========================
+inoremap jj <ESC>
+map <BS> :NERDTreeToggle<CR>
+"Next error
+nnoremap <F2> :lnext<CR> 
+inoremap <F2> :lnext<CR> 
+"Previous error
+nnoremap <F3> :lprevious<CR>
+inoremap <F3> :lprevious<CR>
+
+nnoremap <F8> :Tagbar<CR>
+inoremap <F8> :Tagbar<CR>
+map <tab> <C-p>
+"========================================================================
+
+set wildmode=list:longest,full
+set wildmenu 
+set wildignore+=.git,.svn
+
+"Markdown fix
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
+
+"Folds
+set foldmethod=syntax
+let g:markdown_fold_style = 'nested'
+
+"setlocal spell spelllang=en_us
+
+let &cdpath = ',' . substitute(substitute($CDPATH, '[, ]', '\\\0', 'g'), ':', ',', 'g')
+
+
+"===============================FIX SLOW SCROLL==========================
+set ttyfast 
+set ttyscroll=3
+"set lazyredraw
+
+set synmaxcol=128
+syntax sync minlines=256
+"========================================================================
+
+"==============================SOLORIZED THEME UP========================
+if !has('gui_running')
+    let g:Powerline_symbols = 'fancy'
+    set t_Co=256
+endif
+syntax enable
+colorscheme solarized
+set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_contrast = 'hight'
+let g:solarized_visibility = 'high'
+"========================================================================
+
+filetype plugin on
+set helplang=ru,en
+set cursorline
+set cursorcolumn
+set nocompatible
+set ic
+set hls
+set is
+set textwidth=80
+set winminheight=0
+" Fix for russian world 
 set iskeyword=@,48-57,_,192-255
 " задать размер табуляции в четыре пробела
 set ts=4
@@ -147,7 +239,7 @@ endif
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'solarized_fix',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]

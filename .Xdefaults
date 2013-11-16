@@ -1,4 +1,5 @@
-xterm*faceName:           DejaVu Sans Mono:pixelsize=12
+xterm*faceName:           xft:DejaVu Sans Mono for Powerline
+xterm*faceSize:           10
 xterm*dynamicColors:      true
 xterm*utf8:               2
 xterm*eightBitInput:      true
@@ -16,9 +17,12 @@ Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
-Xft.hintstyle:  hintslight
+Xft.hintstyle:  hintfull
 
-
+URxvt*scrollBar:                       false
+URxvt*saveLines:                       10000
+URxvt*cursorBlink:                     false
+URxvt*font:                            xft:Dejavu Sans Mono for Powerline:size=10
 !!==============================SOLARIZED COLORS==============================
 #define S_base03        #002b36
 #define S_base02        #073642
