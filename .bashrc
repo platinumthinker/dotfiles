@@ -80,24 +80,14 @@ PS1="% "
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='la --color=auto'
 	alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
-
+    alias ls='ls --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias py='python'
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-alias v='vim'
-alias gv='gvim'
-alias tmux='TERM=screen-256color-bce tmux'
-alias cal='ncal -b'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
