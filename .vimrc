@@ -6,6 +6,7 @@ call vundle#rc()
 filetype plugin indent on
 
 "=================================VUNDLE REPO============================
+Bundle 'guns/xterm-color-table.vim'
 """Vundle selfupdate
 Bundle 'gmarik/vundle'
 """LaTeX
@@ -20,7 +21,7 @@ Bundle 'tpope/vim-fugitive'
 """Ctags supports
 Bundle 'vim-scripts/ctags.vim'
 """Color themes
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'platinumthinker/vim-colors-solarized'
 """Erlang autocomplite and show error
 "Bundle 'jimenezrick/vimerl'
 """Tree file viwer
@@ -40,12 +41,110 @@ Bundle 'nelstrom/vim-markdown-folding'
 """Autocomplite
 Bundle 'Valloric/YouCompleteMe'
 
+"==============================SOLORIZED THEME UP========================
+"if !has('gui_running')
+    let g:Powerline_symbols = 'fancy'
+"endif
+colorscheme solarized
+set background=dark
+"========================================================================
+
+
+syntax enable
+filetype plugin on
+set helplang=ru,en
+set cursorline
+set cursorcolumn
+set nocompatible
+" игнорировать регистр при поиске
+set ic
+" подсвечивать поиск
+set hls
+" использовать инкрементальный поиск
+set is
+" ширина текста 
+set textwidth=80
+" минимальная высота окна пусть будет 0 (по умолчанию - 1)
+set winminheight=0
+" всегда делать активное окно максимального размера
+"set noequalalways
+"set winheight=9999
+" установить шрифт 
+"set guifont=courier_new:h10:cRUSSIAN
+" настраиваю для работы с русскими словами (чтобы w, b, * понимали
+" русские слова)
+set iskeyword=@,48-57,_,192-255
+" задать размер табуляции в четыре пробела
+set ts=4
+" отображение выполняемой команды
+set showcmd 
+" перенос по словам, а не по буквам
+set linebreak
+set dy=lastline
+set number
+"set wrap
+set colorcolumn=80
+set shiftwidth=4
+set smartindent
+set smarttab
+set expandtab
+set mouse=a
+set clipboard=unnamedplus
+
+set completeopt=menu,menuone,longest
+set pumheight=15
+
+"let erlang_folding=1
+"let erlang_show_errors=0
+
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
+
+set runtimepath+=$HOME/.vim/vimerl
+
+inoremap jj <ESC>
+map <BS> :NERDTreeToggle<CR>
+"Next error
+nnoremap <F2> :lnext<CR> 
+inoremap <F2> :lnext<CR> 
+"Previous error
+nnoremap <F3> :lprevious<CR>
+inoremap <F3> :lprevious<CR>
+
+nnoremap <F8> :TagbarToggle<CR>
+inoremap <F8> :TagbarToggle<CR>
+map <tab> <C-p>
+
+call togglebg#map("<F5>")
+
+set wildmode=list:longest,full
+set wildmenu 
+set wildignore+=.git,.svn
+
+"Markdown fix
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
+
+"Folds
+set foldmethod=syntax
+let g:markdown_fold_style = 'nested'
+
+"setlocal spell spelllang=en_us
+
+if version >= 700
+    set history=64
+    set undolevels=128
+    set undodir=~/.vim/undodir/
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+
 "============================STATUS BAR SETTINGS UP======================
 set laststatus=2
-if !has('gui_running')
-    let g:Powerline_symbols = 'fancy'
-    set t_Co=256
-endif
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
@@ -169,102 +268,3 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 "========================================================================
-
-"==============================SOLORIZED THEME UP========================
-let g:solarized_termcolors=256
-let g:solarized_hitrail=1
-colorscheme solarized
-set background=dark
-"========================================================================
-
-
-syntax enable
-filetype plugin on
-set helplang=ru,en
-set cursorline
-set cursorcolumn
-set nocompatible
-" игнорировать регистр при поиске
-set ic
-" подсвечивать поиск
-set hls
-" использовать инкрементальный поиск
-set is
-" ширина текста 
-set textwidth=80
-" минимальная высота окна пусть будет 0 (по умолчанию - 1)
-set winminheight=0
-" всегда делать активное окно максимального размера
-"set noequalalways
-"set winheight=9999
-" установить шрифт 
-"set guifont=courier_new:h10:cRUSSIAN
-" настраиваю для работы с русскими словами (чтобы w, b, * понимали
-" русские слова)
-set iskeyword=@,48-57,_,192-255
-" задать размер табуляции в четыре пробела
-set ts=4
-" отображение выполняемой команды
-set showcmd 
-" перенос по словам, а не по буквам
-set linebreak
-set dy=lastline
-set number
-"set wrap
-set colorcolumn=80
-set shiftwidth=4
-set smartindent
-set smarttab
-set expandtab
-set mouse=a
-set clipboard=unnamedplus
-
-set completeopt=menu,menuone,longest
-set pumheight=15
-
-"let erlang_folding=1
-"let erlang_show_errors=0
-
-let g:syntastic_check_on_open=0
-let g:syntastic_check_on_wq=0
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
-
-set runtimepath+=$HOME/.vim/vimerl
-
-inoremap jj <ESC>
-map <BS> :NERDTreeToggle<CR>
-"Next error
-nnoremap <F2> :lnext<CR> 
-inoremap <F2> :lnext<CR> 
-"Previous error
-nnoremap <F3> :lprevious<CR>
-inoremap <F3> :lprevious<CR>
-
-nnoremap <F8> :TagbarToggle<CR>
-inoremap <F8> :TagbarToggle<CR>
-map <tab> <C-p>
-
-set wildmode=list:longest,full
-set wildmenu 
-set wildignore+=.git,.svn
-
-"Markdown fix
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
-
-"Folds
-set foldmethod=syntax
-let g:markdown_fold_style = 'nested'
-
-"setlocal spell spelllang=en_us
-
-if version >= 700
-    set history=64
-    set undolevels=128
-    set undodir=~/.vim/undodir/
-    set undofile
-    set undolevels=1000
-    set undoreload=10000
-endif
