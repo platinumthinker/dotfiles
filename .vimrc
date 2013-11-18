@@ -103,6 +103,7 @@ let g:tagbar_autofocus = 1
 
 "=================================KEY BINDINGS===========================
 inoremap jj <ESC>
+nnoremap <Space> zj
 map <BS> :NERDTreeToggle<CR>
 "Next error
 nnoremap <F2> :lnext<CR> 
@@ -135,7 +136,7 @@ let &cdpath = ',' . substitute(substitute($CDPATH, '[, ]', '\\\0', 'g'), ':', ',
 "===============================FIX SLOW SCROLL==========================
 set ttyfast 
 set ttyscroll=3
-"set lazyredraw
+set lazyredraw
 
 set synmaxcol=128
 syntax sync minlines=256
@@ -209,7 +210,8 @@ inoremap <F3> :lprevious<CR>
 
 nnoremap <F8> :TagbarToggle<CR>
 inoremap <F8> :TagbarToggle<CR>
-map <tab> <C-p>
+inoremap <tab> <C-p>
+nnoremap <tab> <C-w><C-w>  
 
 call togglebg#map("<F5>")
 
