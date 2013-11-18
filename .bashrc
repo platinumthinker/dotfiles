@@ -85,22 +85,11 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 	alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
+    alias ls='ls --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias py='python'
-alias ll='ls -l --color=auto'
-alias la='ls -la --color=auto'
-alias l='ls --color=auto'
-alias v='vim'
-alias gv='gvim'
-alias tmux='TERM=screen-256color-bce tmux'
-alias cal='ncal -b'
-alias ctags-erl='ctags --file-scope=no -R --languages=erlang --exclude=".git" --exclude="_build"'
-alias b='sinan clean && sinan dist && faxien ir'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

@@ -11,6 +11,6 @@
 [mergetool "diffconflicts"]
     cmd = /home/thinker/scripts/diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
-    keepBackup = true
+    keepBackup = false
 [push]
 	default = simple

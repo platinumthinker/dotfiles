@@ -1,4 +1,4 @@
-Config { font = "xft:DejaVu Sans:size=8"
+Config { font = "xft:DejaVu Sans:size=8:style=ExtraLight"
        , bgColor = "#221818"
        , fgColor = "#dedede"
        , position = Top
