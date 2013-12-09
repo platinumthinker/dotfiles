@@ -11,3 +11,7 @@ alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cal='ncal -b'
 cl() { cd "$@" && l; }
+alias cb='sinan clean && sinan dist && faxien ir'
+alias b='sinan dist && faxien ir'
+t() { sinan test single_app_test "$@"; }
+

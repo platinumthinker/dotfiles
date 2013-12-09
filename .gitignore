@@ -1,0 +1,12 @@
+.*
+Documents
+Downloads
+Dropbox
+Pictures
+core
+*.tar
+*.tar.gz
+erlwar*
+*.desktop
+work
+diff
