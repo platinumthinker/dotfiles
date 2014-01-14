@@ -39,6 +39,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'nelstrom/vim-markdown-folding'
 """Autocomplite
 Bundle 'Valloric/YouCompleteMe'
+"""Google calendar
+Bundle 'itchyny/calendar.vim'
 
 syntax enable
 filetype plugin on
@@ -360,3 +362,7 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 "========================================================================
+
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1

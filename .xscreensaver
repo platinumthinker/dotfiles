@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.15 for thinker on Thu Oct 31 18:02:41 2013.
+# Written by xscreensaver-demo 5.15 for thinker on Sun Dec 22 18:16:24 2013.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:20:00
@@ -37,7 +37,7 @@ imageDirectory:	/home/thinker/Pictures/Wallpapers
 mode:		random
 selected:	36
 
-textMode:	program
+textMode:	date
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
@@ -48,15 +48,16 @@ programs:								      \
 - GL: 				superquadrics -root			    \n\
 -				attraction -root			    \n\
 -				blitspin -root				    \n\
--				greynetic -root				    \n\
--				helix -root				    \n\
--				hopalong -root				    \n\
--				imsmap -root				    \n\
+-				greynetic -root -grey			    \n\
+				helix -root				    \n\
+				hopalong -root -popcorn -jong		    \n\
+-				imsmap -root -ncolors 149		    \n\
 -				noseguy -root				    \n\
 -				pyro -root				    \n\
 -				qix -root				    \n\
--				rocks -root				    \n\
--				rorschach -root				    \n\
+				rocks -root				    \n\
+-				rorschach -root -iterations 3043 -offset      \
+				  3 -delay 47				    \n\
 -				decayscreen -root			    \n\
 -				flame -root				    \n\
 -				halo -root				    \n\
@@ -65,16 +66,16 @@ programs:								      \
 -				pedal -root				    \n\
 -				bouboule -root				    \n\
 -				braid -root				    \n\
--				coral -root				    \n\
--				deco -root -ncolors 131 -smooth-colors	    \n\
+-				coral -root -seeds 100			    \n\
+-				deco -root -delay 1 -ncolors 217	      \
+				  -smooth-colors -golden-ratio		    \n\
 -				drift -root				    \n\
 -				fadeplot -root				    \n\
   any: 				galaxy -root -delay 12712 -count 11	      \
 				  -cycles 606 -ncolors 29		    \n\
--				goop -root				    \n\
--				grav -root				    \n\
-				ifs -root -delay 50000 -detail 12 -colors     \
-				  214					    \n\
+				goop -root				    \n\
+				grav -root				    \n\
+				ifs -root -functions 5 -detail 7 -colors 83 \n\
 - GL: 				jigsaw -root				    \n\
 -				julia -root -delay 60000 -count 10466	      \
 				  -cycles 47				    \n\
@@ -82,11 +83,11 @@ programs:								      \
 - GL: 				moebius -root				    \n\
 -				moire -root				    \n\
 - GL: 				morph3d -root				    \n\
--				mountain -root				    \n\
+-				mountain -root -count 55 -ncolors 147	    \n\
 -				munch -root				    \n\
--				penrose -root -ncolors 87 -size 8	    \n\
+				penrose -root -ncolors 87 -size 8	    \n\
 - GL: 				pipes -root				    \n\
--				rd-bomb -root				    \n\
+				rd-bomb -root -epoch 138800 -ncolors 85	    \n\
 - GL: 				rubik -root				    \n\
 -				sierpinski -root			    \n\
 -				slip -root				    \n\
@@ -94,7 +95,7 @@ programs:								      \
 -				starfish -root				    \n\
 -				strange -root				    \n\
 -				swirl -root				    \n\
--				triangle -root				    \n\
+				triangle -root -delay 42609 -ncolors 209    \n\
 -				xjack -root				    \n\
 -				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
@@ -108,28 +109,32 @@ programs:								      \
 -				cynosure -root				    \n\
 -				discrete -root				    \n\
 -				distort -root				    \n\
--				epicycle -root -colors 163 -linewidth 2	      \
-				  -harmonics 18				    \n\
--				flow -root				    \n\
-- GL: 				glplanet -root				    \n\
+-				epicycle -root -colors 1 -holdtime 7	      \
+				  -linewidth 1 -harmonics 18		    \n\
+				flow -root				    \n\
+- GL: 				glplanet -root -image			      \
+				  "/home/thinker/Pictures/Картинки/texture/dem_large/16_bit_dem_large.tif" \n\
 -				interference -root			    \n\
--				kumppa -root				    \n\
+				kumppa -root -speed 0.1722		    \n\
 - GL: 				lament -root				    \n\
--				moire2 -root				    \n\
-- GL: 				sonar -root				    \n\
-- GL: 				stairs -root				    \n\
+-				moire2 -root -ncolors 1 -thickness 2	    \n\
+- GL: 				sonar -root -ping			      \
+				  google.com,facebook.com,twitter.com,yahoo.com,flickr.com,www.apple.com,wikipedia.org,linux.org,youtube.com,disqus.com,blogger.com,wordpress.com,tumblr.com,whitehouse.gov \n\
+  GL: 				stairs -root				    \n\
 -				truchet -root				    \n\
 -				vidwhacker -root			    \n\
 -				blaster -root				    \n\
 -				bumps -root				    \n\
-- GL: 				ccurve -root -limit 267693 -fps		    \n\
+- GL: 				ccurve -root -pause 0.4 -limit 267693 -fps  \n\
 -				compass -root				    \n\
 -				deluxe -root				    \n\
--				demon -root				    \n\
+				demon -root -size 12			    \n\
 - GL: 				extrusion -root				    \n\
--				loop -root -ncolors 99 -size -8		    \n\
+				loop -root				    \n\
 -				penetrate -root				    \n\
--				petri -root				    \n\
+-				petri -root -diaglim 1.1304 -anychan	      \
+				  0.1761 -instantdeathchan 0.0522	      \
+				  -minlifespan 678 -maxlifespan 2583	    \n\
 				phosphor -root				    \n\
 - GL: 				pulsar -root				    \n\
 -				ripples -root				    \n\
@@ -140,7 +145,7 @@ programs:								      \
 -				wander -root				    \n\
 -				webcollage -root			    \n\
 -				xflame -root				    \n\
--				xmatrix -root				    \n\
+-				xmatrix -root -insert top		    \n\
 - GL: 				gflux -root				    \n\
 -				nerverot -root				    \n\
 -				xrayswarm -root				    \n\
@@ -156,8 +161,8 @@ programs:								      \
 -				speedmine -root				    \n\
 - GL: 				starwars -root				    \n\
 - GL: 				stonerview -root			    \n\
--				vermiculate -root			    \n\
--				whirlwindwarp -root -points 697		    \n\
+				vermiculate -root -speed 1000		    \n\
+				whirlwindwarp -root -points 697		    \n\
 -				zoom -root				    \n\
 -				anemone -root				    \n\
 -				apollonian -root			    \n\
@@ -165,14 +170,18 @@ programs:								      \
 - GL: 				cubenetic -root				    \n\
 - GL: 				endgame -root				    \n\
 -				euler2d -root				    \n\
--				fluidballs -root			    \n\
-- GL: 				flurry -root				    \n\
+				fluidballs -root -count 1305 -size 5	      \
+				  -no-shake				    \n\
+  GL: 				flurry -root				    \n\
 - GL: 				glblur -root				    \n\
-- GL: 				glsnake -root				    \n\
+  GL: 				glsnake -root -delay 0 -statictime 1000	      \
+				  -explode 0.0261			    \n\
 -				halftone -root				    \n\
-- GL: 				juggler3d -root				    \n\
+- GL: 				juggler3d -root -count 719 -cycles 471	      \
+				  -tail 73 -pattern "&6"		    \n\
 - GL: 				lavalite -root				    \n\
--				polyominoes -root			    \n\
+				polyominoes -root -delay 33043 -cycles	      \
+				  3043 -ncolors 255			    \n\
 - GL: 				queens -root				    \n\
 - GL: 				sballs -root				    \n\
 - GL: 				spheremonics -root			    \n\
@@ -185,10 +194,12 @@ programs:								      \
 - GL: 				blinkbox -root				    \n\
 - GL: 				blocktube -root				    \n\
 - GL: 				bouncingcow -root			    \n\
--				cloudlife -root				    \n\
+				cloudlife -root				    \n\
 - GL: 				cubestorm -root				    \n\
--				eruption -root				    \n\
-- GL: 				flipflop -root				    \n\
+-				eruption -root -ncolors 85 -particles	      \
+				  2000 -cooloff 5 -gravity 1 -cycles 2168   \n\
+- GL: 				flipflop -root -spin 0.8348 -size-x 20	      \
+				  -size-y 20				    \n\
 - GL: 				flyingtoasters -root			    \n\
 -				fontglide -root				    \n\
 - GL: 				gleidescope -root			    \n\
@@ -206,35 +217,36 @@ programs:								      \
 - GL: 				polytopes -root				    \n\
 				pong -root				    \n\
 -				popsquares -root			    \n\
-- GL: 				surfaces -root				    \n\
--				xanalogtv -root				    \n\
+- GL: 				surfaces -root -speed 349 -mode		      \
+				  line-loops -wander			    \n\
+				xanalogtv -root				    \n\
 -				abstractile -root			    \n\
 -				anemotaxis -root			    \n\
 - GL: 				antinspect -root			    \n\
 -				fireworkx -root				    \n\
 -				fuzzyflakes -root			    \n\
--				interaggregate -root			    \n\
+-				interaggregate -root -num-circles 303	    \n\
 				intermomentary -root -draw-delay 40000	      \
 				  -num-discs 198			    \n\
--				memscroller -root			    \n\
-- GL: 				noof -root				    \n\
--				pacman -root				    \n\
+				memscroller -root			    \n\
+- GL: 				noof -root -delay 100000		    \n\
+				pacman -root -delay 39130 -size 200	    \n\
 - GL: 				pinion -root				    \n\
 - GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
 				substrate -root				    \n\
--				wormhole -root				    \n\
+				wormhole -root				    \n\
 - GL: 				antmaze -root				    \n\
 - GL: 				boing -root				    \n\
 -				boxfit -root				    \n\
 - GL: 				carousel -root				    \n\
 -				celtic -root				    \n\
-- GL: 				crackberg -root -delay 16949 -visibility      \
-				  0.7424 -nsubdivs 5 -color ice		    \n\
+  GL: 				crackberg -root -delay 54783 -visibility      \
+				  0.6313 -color plain			    \n\
 - GL: 				cube21 -root				    \n\
 -				fiberlamp -root				    \n\
 - GL: 				fliptext -root				    \n\
-- GL: 				glhanoi -root				    \n\
+- GL: 				glhanoi -root -poles 3			    \n\
 - GL: 				tangram -root				    \n\
 - GL: 				timetunnel -root			    \n\
 - GL: 				glschool -root				    \n\
@@ -243,20 +255,30 @@ programs:								      \
 -				cwaves -root				    \n\
 - GL: 				gears -root				    \n\
   GL: 				glcells -root				    \n\
-- GL: 				lockward -root				    \n\
--				m6502 -root -displaytime 51		    \n\
+  GL: 				lockward -root				    \n\
+				m6502 -root -displaytime 51		    \n\
 - GL: 				moebiusgears -root			    \n\
 - GL: 				voronoi -root				    \n\
-- GL: 				hypnowheel -root			    \n\
+  GL: 				hypnowheel -root -delay 0 -speed 20	      \
+				  -layers 1 -count 14 -twistiness 5.1426    \n\
 - GL: 				klein -root				    \n\
--				lcdscrub -root				    \n\
+-				lcdscrub -root -delay 0 -spread 5 -cycles     \
+				  151					    \n\
 - GL: 				photopile -root				    \n\
-- GL: 				skytentacles -root			    \n\
+- GL: 				skytentacles -root -flexibility 0.7104 -cel \n\
 - GL: 				rubikblocks -root			    \n\
 - GL: 				companioncube -root			    \n\
 - GL: 				hilbert -root				    \n\
 - GL: 				tronbit -root				    \n\
 -				unicode -root				    \n\
+- GL: 				geodesic -root				    \n\
+-				hexadrop -root				    \n\
+- GL: 				kaleidocycle -root -count 30 -wander	      \
+				  -spin YZ				    \n\
+- GL: 				quasicrystal -root			    \n\
+  GL: 				unknownpleasures -root -delay 43478	      \
+				  -speed 0.5539 -count 20 -resolution 82      \
+				  -no-ortho				    \n\
 
 
 pointerPollTime:    0:00:05
