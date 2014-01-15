@@ -1,5 +1,6 @@
 #!/bin/bash
 
+xrdb /home/thinker/.Xdefaults
 /home/thinker/scripts/wal.sh&
 setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
 kbdd &
