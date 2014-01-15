@@ -31,15 +31,15 @@ HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+#shopt -s checkwinsize
 
 #Return value visualisation
-PS1="\$(if [[ \$? == 0 ]]; then
-    echo \"\";
-else
-    echo \"\[\033[03;37m\]\$?\[\033[03;31m\]\342\234\227\";
-fi)"
-
+#PS1="\$(if [[ \$? == 0 ]]; then
+    #echo \" \";
+#else
+    #echo \"\[\033[03;37m\]\$?\[\033[03;31m\]\342\234\227\";
+#fi)"
+PS1=""
 # Turn the prompt symbol red if the user is root
 if [ $(id -u) -eq 0 ]; then 
     # You are root, make the prompt red
@@ -50,15 +50,13 @@ fi
 
 
 ## Color aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 
 ## Alias definitions.
 if [ -f ~/.bash_aliases ]; then
