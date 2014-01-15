@@ -33,8 +33,20 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-## Promt string
-PS1="% "
+#Return value visualisation
+PS1="\$(if [[ \$? == 0 ]]; then 
+    echo \"\[\033[03;32m\]\342\234\223\"; 
+else 
+    echo \"\[\033[03;31m\]\342\234\227\"; fi)"
+
+# Turn the prompt symbol red if the user is root
+if [ $(id -u) -eq 0 ];
+then # You are root, make the prompt red
+    PS1=$PS1"\e[03;31m#\e[00m "
+else        
+    PS1=$PS1"\e[03;32m>\e[00m "
+fi
+
 
 ## Color aliases
 if [ -x /usr/bin/dircolors ]; then
