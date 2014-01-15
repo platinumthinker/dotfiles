@@ -37,7 +37,7 @@ shopt -s checkwinsize
 PS1="\$(if [[ \$? == 0 ]]; then 
     echo \"\[\033[03;32m\]\342\234\223\"; 
 else 
-    echo \"\[\033[03;31m\]\342\234\227\"; fi)"
+    echo \"\[\033[01;37m\]\$? \[\033[03;31m\]\342\234\227\"; fi)"
 
 # Turn the prompt symbol red if the user is root
 if [ $(id -u) -eq 0 ];
