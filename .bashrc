@@ -1,24 +1,31 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+## Command at terminal startup (Random cowsay and fortune)
+#fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+
+## Path declarations
 export CDPATH=.:~:/home/thinker/develop
-export TERM=xterm-256color
-ulimit -c unlimited
+
+## Russian man priority
 export MANOPT="-L ru"
+
+## 256 color support in terminal
+export TERM=xterm-256color
+
+## Set unlimit size for core dump
+ulimit -c unlimited
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
+# Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# for setting history length 
 HISTSIZE=1000
 HISTFILESIZE=2000
 
@@ -26,8 +33,23 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-PS1="% "
+#Return value visualisation
+PS1="\$(if [[ \$? == 0 ]]; then
+    echo \"\";
+else
+    echo \"\[\033[03;37m\]\$?\[\033[03;31m\]\342\234\227\";
+fi)"
 
+# Turn the prompt symbol red if the user is root
+if [ $(id -u) -eq 0 ]; then 
+    # You are root, make the prompt red
+    PS1=$PS1"\e[03;31m#\e[00m "
+else        
+    PS1=$PS1"\e[03;32m>\e[00m "
+fi
+
+
+## Color aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 	alias dir='dir --color=auto'
@@ -38,18 +60,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+## Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+## Autocompletion for commands
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
