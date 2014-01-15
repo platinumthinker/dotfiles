@@ -59,7 +59,7 @@
 
 
 # Show file titles (title, author, album) instead of file names.
-ReadTags		= yes 
+ReadTags		= no
 
 # Directory in which you store music files. If you specify it you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.
@@ -130,7 +130,7 @@ SoundDriver = JACK:ALSA:OSS
 #OSSMixerChannel2 = master          # 'pcm', 'master' or 'speaker'
 
 # ALSA output settings.
-ALSADevice = default
+#ALSADevice = default
 #ALSAMixer1 = PCM
 #ALSAMixer2 = Master
 
@@ -203,7 +203,7 @@ Theme			= darkdot_theme
 # MOCDir		= ~/.moc
 
 # Use mmap() to read files. mmap() is much slower on NFS.
-UseMmap			= no
+UseMmap			= yes
 
 # Use MIME to identify audio files.  This can make for slower loading
 # of playlists but is more accurate than using "extensions".
@@ -213,7 +213,7 @@ UseMmap			= no
 # UTF-8 is not used here and MOC can't guess how tags are encoded. Another
 # solution is using librcc (see the next option). This option is ignored
 # if UseRCC is set to yes.
-#ID3v1TagsEncoding		= WINDOWS-1251
+ID3v1TagsEncoding		= WINDOWS-1251
 
 # Use librcc to fix ID3 version 1/1.1 tags encoding.
 #UseRCC				= yes
@@ -245,7 +245,7 @@ SyncPlaylist		= yes
 
 # Use ASCII characters instead of graphic for drawing lines. This helps on
 # some terminals.
-ASCIILines		= no
+ASCIILines		= yes
 
 # FastDirs, these allow you to jump directly to a directory, the key bindings
 # are in the keymap file.

@@ -39,6 +39,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'nelstrom/vim-markdown-folding'
 """Autocomplite
 Bundle 'Valloric/YouCompleteMe'
+"""Google calendar
+Bundle 'itchyny/calendar.vim'
 
 syntax enable
 filetype plugin on
@@ -89,7 +91,7 @@ let erlang_folding=1
 let erlang_show_errors=0
 let	g:erlangHighlightBif=1 
 let g:erlangFoldSplitFunction=1
-"let g:erlangManPath="/home/thinker/erlware/man"
+let g:erlangManPath="/home/thinker/erlware/man"
 let g:erlangHighlightErrors=0
 
 let g:syntastic_check_on_open=0
@@ -103,6 +105,7 @@ let g:tagbar_autofocus = 1
 
 "=================================KEY BINDINGS===========================
 inoremap jj <ESC>
+"Go to next fold
 nnoremap <Space> zj
 map <BS> :NERDTreeToggle<CR>
 "Next error
@@ -114,7 +117,6 @@ inoremap <F3> :lprevious<CR>
 
 nnoremap <F8> :Tagbar<CR>
 inoremap <F8> :Tagbar<CR>
-map <tab> <C-p>
 "========================================================================
 
 set wildmode=list:longest,full
@@ -131,7 +133,6 @@ let g:markdown_fold_style = 'nested'
 "setlocal spell spelllang=en_us
 
 let &cdpath = ',' . substitute(substitute($CDPATH, '[, ]', '\\\0', 'g'), ':', ',', 'g')
-
 
 "===============================FIX SLOW SCROLL==========================
 set ttyfast 
@@ -175,7 +176,7 @@ set showcmd
 set linebreak
 set dy=lastline
 set number
-"set wrap
+set wrap
 set colorcolumn=80
 set shiftwidth=4
 set smartindent
@@ -187,7 +188,7 @@ set clipboard=unnamedplus
 set completeopt=menu,menuone,longest
 set pumheight=15
 
-"let erlang_folding=1
+let erlang_folding=1
 "let erlang_show_errors=0
 
 let g:syntastic_check_on_open=0
@@ -227,6 +228,9 @@ set foldmethod=syntax
 let g:markdown_fold_style = 'nested'
 
 "setlocal spell spelllang=en_us
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 if version >= 700
     set history=64

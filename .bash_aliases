@@ -13,5 +13,11 @@ alias cal='ncal -b'
 cl() { cd "$@" && l; }
 alias cb='sinan clean && sinan dist && faxien ir'
 alias b='sinan dist && faxien ir'
+alias cdu='cd $(ls -rtd */ | tail -1)'
 t() { sinan test single_app_test "$@"; }
+alias h='history'
+alias j="jobs -l"
+alias l="ls -l "
+alias ll="ls -l"
+alias ls="ls -F"
 
