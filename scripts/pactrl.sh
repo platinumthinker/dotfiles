@@ -5,16 +5,16 @@ MUTE_FILE=/home/thinker/scripts/pa_mute
 ICON_PATH=/usr/share/icons/Faenza/status/48
 
 function doMute() {
-	NEW_VOLUME=$(amixer -D hw:1 get Master | egrep -o '[0-9]+%')
+	NEW_VOLUME=$(amixer get Master | egrep -o '[0-9]+%')
 	NEW_VOLUME=${NEW_VOLUME%%%}
-	MUTE_FILE=`amixer -D hw:1 get Master | egrep 'Playback.*?\[o' | egrep -o '\[o.+\]'`
+	MUTE_FILE=`amixer get Master | egrep 'Playback.*?\[o' | egrep -o '\[o.+\]'`
     if [[ $MUTE_FILE == '[on]' ]];
     then
-        amixer -D hw:1 set Master mute
+        amixer set Master mute
     else
-		amixer -D hw:1 set Master unmute
-    	amixer -D hw:1 set Speaker unmute
-    	amixer -D hw:1 set Headphone unmute
+		amixer set Master unmute
+    	amixer set Speaker unmute
+    	amixer set Headphone unmute
     fi 
 }
 
