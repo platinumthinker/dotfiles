@@ -7,7 +7,6 @@
 # media-sound/mac
 # media-sound/ttaenc
 # media-sound/wavpack
-#
 #############################
 
 while read cuefile
@@ -53,5 +52,3 @@ do
  rm -f tmp.cue "$cue" "$obj".{flac,ape,tta} tags.tmp
  popd
 done < <(find . -type f -iname "*.cue")
-
-
