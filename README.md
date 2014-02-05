@@ -2,13 +2,15 @@
 
 ##INSTALL
 Run this:
-:::sh
+```sh
 git clone git@bitbucket.org:platinumthinker/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./bootstrap.sh
+```
 
 ##SCRIPT
 Contents a folder for my scripts:
+
 * battery.sh: Viewer charge and wear battery's
 * cuesplit: Split flac, ape nad tta by cue file
 * display.sh: Connect second monitor by VGA ports
