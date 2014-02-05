@@ -18,3 +18,6 @@ t() { sinan test single_app_test "$@"; }
 alias h='history'
 alias j="jobs -l"
 
+#Alias for primus with libs
+alias opti32='optirun --primus-ldpath=/usr/lib/i386-linux-gnu'
+alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
