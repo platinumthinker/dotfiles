@@ -1,32 +1,40 @@
-#Dot files and useful scripts#
+#Dot files and useful scripts
 
-##scripts## 
+##INSTALL
+Run this:
+```sh
+git clone git@bitbucket.org:platinumthinker/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./bootstrap.sh
+```
+
+##SCRIPT
 Contents a folder for my scripts:
-    * battery.sh
+    - battery.sh
     Viewer charge and wear battery's
-    * cuesplit
+    - cuesplit
     Split flac, ape nad tta by cue file
-    * display.sh
+    - display.sh
     Connect second monitor by VGA ports
-    * keyboard.sh
+    - keyboard.sh
     Add ru variant keyboard layout and change by CAPS_LOCK
-    * lock.sh/unlock.sh
+    - lock.sh/unlock.sh
     Action for lock/unlock screen when remove USB key (pamusb)
-    * mirror.sh
+    - mirror.sh
     For view webcam on monitor (mplayer)
-    * notify.sh
+    - notify.sh
     For notify popup message when play music (mocp)
-    * pactl.sh
+    - pactl.sh
     For volume control (pulseaudio)
-    * wal.sh
+    - wal.sh
     Random wallpaper of ~/Pictures/Wallpapers/
-    * wireless.sh
+    - wireless.sh
     Visualization wi-fi quality signal (for xmobar)
-    * xmonad-start
+    - xmonad-start
     Autostart programs and xmonad
 
-##Fonts##
+##FONTS
 Use DejaVu_Sans_Mono_for_Powerline font for render fancy symbols (vim lightline)
 
-##Resourses
+##RESOURSES
 Run xrdb .Xdefaults for add solorized color in terminal
