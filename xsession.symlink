@@ -1,0 +1,13 @@
+~/scripts/wal.sh&
+xrdb /home/thinker/.Xdefaults&
+pamusb-agent&
+setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
+kbdd &
+trayer --edge top --align right --SetDockType true --SetPartialStrut false --height 16 --transparent true --alpha 0 --tint 0x002b36 --margin 5 --width 6 --distancefrom right --distance 360&
+xscreensaver -no-splash &
+wicd-client -t&
+xfsettingsd&
+blueman-applet &
+thunar --daemon &
+mocp -S &
+xmonad
