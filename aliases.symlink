@@ -7,7 +7,7 @@ alias l='ls -CF'
 alias v='vim'
 alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
-alias cal='ncal -b'
+alias cal='ncal -b -M'
 cl() { cd "$@" && l; }
 alias cdu='cd $(ls -rtd */ | tail -1)'
 t() { sinan test single_app_test "$@"; }

@@ -70,5 +70,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ## Alias definitions.
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+    source ~/.aliases
 fi
