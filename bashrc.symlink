@@ -58,9 +58,13 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 
+function title { echo -en "\033]2;$1\007"; }
+function cd { dir=$1; if [ -z "$dir" ]; then dir=~; fi; builtin cd "$dir" && title `pwd`; }
+cd `pwd`
+
 ## Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases]; then
+    . ~/.aliases
 fi
 
 ## Autocompletion for commands
