@@ -67,6 +67,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Vi mode
+#set -o vi
+#bindkey -v
+
+# History settings
+setopt hist_ignore_dups
+unsetopt share_history
 
 ## Alias definitions.
 if [ -f ~/.aliases ]; then

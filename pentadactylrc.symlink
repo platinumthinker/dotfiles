@@ -1,2 +1,3 @@
 colorscheme solarized-dark
 set defsearch=duckduckgo
+set guioptions=bCrsn
