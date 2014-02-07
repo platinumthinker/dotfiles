@@ -1,5 +1,5 @@
 # some more ls aliases
-alias su='sudo -i'
+#alias su='sudo -i'
 alias py='python'
 alias ll="ls -l"
 alias la='ls -la'
