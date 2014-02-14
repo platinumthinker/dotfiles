@@ -5,6 +5,7 @@ Run this:
 ```sh
 git clone git@bitbucket.org:platinumthinker/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+sudo ./scripts/install_all.sh
 ./bootstrap.sh
 ```
 
