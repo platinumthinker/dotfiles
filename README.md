@@ -22,6 +22,7 @@ Contents a folder for my scripts:
 * wal.sh: Random wallpaper of ~/Pictures/Wallpapers/
 * wireless.sh: Visualization wi-fi quality signal (for xmobar)
 * xmonad-start: Autostart programs and xmonad
+* dmpc: Dmenu based MPD client
 
 ##FONTS
 Use DejaVu_Sans_Mono_for_Powerline font for render fancy symbols (vim lightline)
