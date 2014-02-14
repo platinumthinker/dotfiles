@@ -1,6 +1,6 @@
 #!/bin/bash
-DOTFILES_ROOT="$(pwd)"
 set -e
+DOTFILES_ROOT="$(pwd)"
 
 info()
 {
@@ -34,6 +34,15 @@ install_dotfiles()
         rm -rf $dest
         link_files $file $dest
     done
+    link_clipit
+}
+
+link_clipit()
+{
+    rm $HOME/.local/share/clipit/actions
+    rm $HOME/.config/clipit/clipitrc
+    link_files $DOTFILES_ROOT/clipit/actions $HOME/.local/share/clipit/actions
+    link_files $DOTFILES_ROOT/clipit/clipitrc $HOME/.config/clipit/clipitrc
 }
 
 install_dotfiles

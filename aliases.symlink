@@ -1,5 +1,4 @@
 # some more ls aliases
-#alias su='sudo -i'
 alias py='python'
 alias ll="ls -l"
 alias la='ls -la'
@@ -17,3 +16,5 @@ alias j="jobs -l"
 #Alias for primus with libs
 alias opti32='optirun --primus-ldpath=/usr/lib/i386-linux-gnu'
 alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
+
+alias checkinstall='checkinstall --fstrans=no --install=yes'
