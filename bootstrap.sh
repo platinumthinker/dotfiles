@@ -45,5 +45,17 @@ link_clipit()
     link_files $DOTFILES_ROOT/clipit/clipitrc $HOME/.config/clipit/clipitrc
 }
 
+install_dotfilesi_root()
+{
+    sudo link_files $DOTFILES_ROOT/fonts.symlink /root/.fonts
+    sudo link_files $DOTFILES_ROOT/zshrc.symlink /root/.zshrc
+    sudo link_files $DOTFILES_ROOT/bashrc.symlink /root/.bashrc
+    sudo link_files $DOTFILES_ROOT/aliases.symlink /root/.aliases
+    sudo link_files $HOME/.oh-my-zsh /root/.oh-my-zsh
+    sudo link_files $DOTFILES_ROOT/gtkrc-2.0.symlink /root/.gtkrc-2.0
+    sudo link_files $DOTFILES_ROOT/gtkrc.symlink /root/.gtkrc
+}
+
 install_dotfiles
+install_dotfilesi_root
 success "All installed!"
