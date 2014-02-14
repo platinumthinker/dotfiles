@@ -9,11 +9,11 @@ alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cal='ncal -b -M'
 cl() { cd "$@" && l; }
+
+alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
+alias b='sinan dist && (echo a | faxien ir)'
 alias cdu='cd $(ls -rtd */ | tail -1)'
 t() { sinan test single_app_test "$@"; }
 alias h='history'
 alias j="jobs -l"
-
-#Alias for primus with libs
-alias opti32='optirun --primus-ldpath=/usr/lib/i386-linux-gnu'
-alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
+zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
