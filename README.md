@@ -28,3 +28,7 @@ Use DejaVu_Sans_Mono_for_Powerline font for render fancy symbols (vim lightline)
 
 ##RESOURSES
 Run xrdb .Xdefaults for add solorized color in terminal
+
+##TOOLS
+* clipman: Keyboard buffers manager
+* youtube-dl: Downloader from youtube
