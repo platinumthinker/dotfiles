@@ -32,5 +32,9 @@ Use DejaVu_Sans_Mono_for_Powerline font for render fancy symbols (vim lightline)
 Run xrdb .Xdefaults for add solorized color in terminal
 
 ##TOOLS
+* workrave: For remind time breaks
 * clipman: Keyboard buffers manager
 * youtube-dl: Downloader from youtube
+
+##GTK THEMES
+Based on XFCE (gtk2.0, gtk3.0) and Solorized project (http://ethanschoonover.com/solarized) Dark and light.

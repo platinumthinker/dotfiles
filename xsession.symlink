@@ -9,7 +9,7 @@ xhost +local:&
 xhost +local:mpd&
 
 xscreensaver -no-splash &
-synclient TapButton1=1 TapButton2=2 TapButton3=3 CircularScrolling=1
+synclient TapButton1=1 TapButton2=2 TapButton3=3&
 TouchpadOff=0
 pamusb-agent&
 
