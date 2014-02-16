@@ -1,8 +1,13 @@
 ~/scripts/wal.sh
+
+wicd-client -t&
+
 xrdb /home/thinker/.Xdefaults&
 setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
 kbdd &
 xhost +local:&
+xhost +local:mpd&
+
 xscreensaver -no-splash &
 synclient TapButton1=1 TapButton2=2 TapButton3=3 CircularScrolling=1
 TouchpadOff=0
@@ -12,7 +17,7 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut false --hei
 
 clipit &
 blueman-applet &
-wicd-client -t&
 dropbox start&
+workrave&
 
 xmonad

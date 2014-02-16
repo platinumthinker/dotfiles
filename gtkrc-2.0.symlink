@@ -1,19 +1,14 @@
-# DO NOT EDIT! This file will be overwritten by LXAppearance.
-# Any customization should be done in ~/.gtkrc-2.0.mine instead.
+# -- THEME AUTO-WRITTEN DO NOT EDIT
+include "/usr/share/themes/Xfce-dusk/gtk-2.0/gtkrc"
 
-gtk-theme-name="Xfce-dusk"
-gtk-icon-theme-name="Faenza-Ambiance"
+style "user-font" {
+	font_name = "DejaVu Sans 10"
+}
+
+widget_class "*" style "user-font"
+
 gtk-font-name="DejaVu Sans 10"
-gtk-cursor-theme-name=""
-gtk-cursor-theme-size=0
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=0
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle="hintfull"
-gtk-xft-rgba="none"
-include "/home/thinker/.gtkrc-2.0.mine"
+
+include "/home/thinker/.gtkrc.mine"
+
+# -- THEME AUTO-WRITTEN DO NOT EDIT
