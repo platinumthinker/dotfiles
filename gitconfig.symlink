@@ -1,6 +1,6 @@
 [user]
 	name = Andrew Teplyashin
-	email = platinumthinker@gmail.com
+	email = andrey.teplyashin@eltex.loc
 [core]
 	editor = git
 	editor = /usr/bin/vim
