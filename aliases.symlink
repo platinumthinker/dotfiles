@@ -1,5 +1,4 @@
 # some more ls aliases
-#alias su='sudo -i'
 alias py='python'
 alias ll="ls -l"
 alias la='ls -la'
@@ -17,3 +16,5 @@ t() { sinan test single_app_test "$@"; }
 alias h='history'
 alias j="jobs -l"
 zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
+
+alias checkinstall='checkinstall --fstrans=no --install=yes'
