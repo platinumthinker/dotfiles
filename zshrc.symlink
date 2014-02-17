@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-path=( $path /home/thinker/erlware/bin )
-cdpath=( $cdpath . /home/thinker /home/thinker/work/biser/projects /home/thinker/work )
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -52,7 +50,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH
+export CDPATH=$CDPATH:/home/thinker:/home/thinker/work/biser/projects:/home/thinker/work
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

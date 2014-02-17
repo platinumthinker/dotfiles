@@ -10,7 +10,7 @@ alias tmux='TERM=screen-256color-bce tmux'
 alias cal='ncal -b -M'
 cl() { cd "$@" && l; }
 
-alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
+alias cb='sinan clean && sinan dist && (echo 'a\n' | faxien ir)'
 alias b='sinan dist && (echo a | faxien ir)'
 alias cdu='cd $(ls -rtd */ | tail -1)'
 t() { sinan test single_app_test "$@"; }
