@@ -1,6 +1,6 @@
 ~/scripts/wal.sh
 
-wicd-client -t&
+nm-applet&
 
 xrdb /home/thinker/.Xdefaults&
 setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
@@ -9,14 +9,11 @@ xhost +local:&
 xhost +local:mpd&
 
 xscreensaver -no-splash &
-synclient TapButton1=1 TapButton2=2 TapButton3=3&
-TouchpadOff=0
 pamusb-agent&
 
-trayer --edge top --align right --SetDockType true --SetPartialStrut false --height 16 --transparent true --alpha 0 --tint 0x002b36 --margin 5 --width 9 --distancefrom right --distance 360&
+trayer --edge top --align center --SetDockType true --SetPartialStrut false --height 16 --transparent true --alpha 0 --tint 0x002b36 --margin 5 --width 5 --distancefrom center --distance -640&
 
 clipit &
-blueman-applet &
 dropbox start&
 workrave&
 
