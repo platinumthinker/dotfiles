@@ -45,7 +45,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian battery)
+plugins=(autoenv command-not-found debian extract git gnu-utils history lol pip pyenv vundle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,6 +70,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Vi mode
 #set -o vi
 #bindkey -v
+
+export XDG_CURRENT_DESKTOP=gnome
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 # History settings
 setopt hist_ignore_dups

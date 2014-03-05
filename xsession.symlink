@@ -1,23 +1,26 @@
 ~/scripts/wal.sh
 
+xfsettingsd
+
 wicd-client -t&
 
 xrdb /home/thinker/.Xdefaults&
-setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
+setxkbmap -layout us,ru -variant -option \
+              grp:caps_toggle,terminate:ctrl_alt_bksp &
 kbdd &
 xhost +local:&
-xhost +local:mpd&
 
 xscreensaver -no-splash &
-synclient TapButton1=1 TapButton2=2 TapButton3=3&
-TouchpadOff=0
+synclient TapButton1=1 TapButton2=2 TapButton3=3 TouchpadOff=0&
 pamusb-agent&
 
-trayer --edge top --align right --SetDockType true --SetPartialStrut false --height 16 --transparent true --alpha 0 --tint 0x002b36 --margin 5 --width 9 --distancefrom right --distance 360&
-
+start-pulseaudio-x11&
+xfce4-volumed&
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1&
 clipit &
 blueman-applet &
-dropbox start&
+dropbox start
 workrave&
 
-xmonad
+export AWT_TOOLKIT=XToolkit
+exec i3 --force-xinerama
