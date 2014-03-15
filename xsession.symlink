@@ -1,5 +1,6 @@
 ~/scripts/wal.sh
 
+gnome-keyring-daemon&
 xfsettingsd
 
 wicd-client -t&
@@ -16,11 +17,15 @@ pamusb-agent&
 
 start-pulseaudio-x11&
 xfce4-volumed&
-/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1&
 clipit &
 blueman-applet &
 dropbox start
 workrave&
+mpd ~/.mpd/config
 
+wmname LG3D&
 export AWT_TOOLKIT=XToolkit
-exec i3 --force-xinerama
+export QT_XFT=true
+export GDK_USE_XFT=1
+
+exec awesome
