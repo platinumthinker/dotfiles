@@ -4,9 +4,9 @@ nm-applet&
 
 xrdb /home/thinker/.Xdefaults&
 setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
+xfsettingsd&
 kbdd &
 xhost +local:&
-xhost +local:mpd&
 
 xscreensaver -no-splash &
 pamusb-agent&

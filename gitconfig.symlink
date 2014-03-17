@@ -4,12 +4,17 @@
 [core]
 	editor = git
 	editor = /usr/bin/vim
+	excludesfile = /home/thinker/.gitignore
 [color]
 	ui = always
 [merge]
-	tool = diffconflicts
-[mergetool "diffconflicts"]
-    cmd = /home/thinker/scripts/diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	tool = fugitive 
+[mergetool "fugitive"]
+    cmd  = vim -f -c "Gdiff" "$MERGED"
+	trustExitCode = true
+    keepBackup = false
+[mergetool "gfugitive"]
+    cmd  = gvim -f -c "Gdiff" "$MERGED"
 	trustExitCode = true
     keepBackup = false
 [push]
