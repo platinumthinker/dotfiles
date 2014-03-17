@@ -23,7 +23,6 @@ dropbox start
 workrave&
 mpd ~/.mpd/config
 
-wmname LG3D&
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
