@@ -27,4 +27,5 @@ export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
 
-exec awesome
+
+exec ck-launch-session dbus-launch awesome
