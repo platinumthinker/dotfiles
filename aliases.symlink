@@ -20,4 +20,4 @@ alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
 alias checkinstall='checkinstall --fstrans=no --install=yes'
 alias ag='/usr/bin/ag'
 
-alias adg='sudo apt-get update && sudo apt-get --show-upgraded upgrade'
+alias adg='sudo apt-get update && sudo apt-get --verbose-versions upgrade'
