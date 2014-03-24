@@ -19,3 +19,4 @@ zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
 
 alias checkinstall='checkinstall --fstrans=no --install=yes'
 alias ag='/usr/bin/ag'
+alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'

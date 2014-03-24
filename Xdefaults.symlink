@@ -11,6 +11,7 @@ xterm*rightScrollBar:     false
 xterm*jumpScroll:         false
 xterm*multiScroll:        false
 xterm*toolBar:            false
+Xterm*clientDecoration:   none
 
 !!================================XFT SETTINGS================================
 Xft.dpi:        96
