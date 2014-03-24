@@ -1,4 +1,12 @@
 colorscheme solarized-dark
 set defsearch=duckduckgo
+set verbose=0
 set guioptions=bCrsn
 set titlestring=
+set activate=addons,bookmarks,diverted,downloads,extoptions,help,quickmark,tabopen,paste
+set complete=slfS
+
+autocmd LocationChange commafeed.com :normal! <C-z>
+autocmd LocationChange readability.com :normal! <C-z>
+autocmd LocationChange mail.google.com :set editor=gvim -f -c 'set ft=mail' +<line>
+

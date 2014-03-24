@@ -49,6 +49,6 @@ do
  }
  done
 
- rm -f tmp.cue "$cue" "$obj".{flac,ape,tta} tags.tmp
+ #rm -f tmp.cue "$cue" "$obj".{flac,ape,tta} tags.tmp
  popd
 done < <(find . -type f -iname "*.cue")

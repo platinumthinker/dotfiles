@@ -8,15 +8,20 @@ alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cal='ncal -b -M'
 cl() { cd "$@" && l; }
-
-alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
-alias b='sinan dist && (echo a | faxien ir)'
 alias cdu='cd $(ls -rtd */ | tail -1)'
-t() { sinan test single_app_test "$@"; }
 alias h='history'
 alias j="jobs -l"
 zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
 
 alias checkinstall='checkinstall --fstrans=no --install=yes'
 alias ag='/usr/bin/ag'
+
+alias adg='sudo apt-get update && sudo apt-get --verbose-versions upgrade'
+alias ai='sudo apt-get install'
+apt_pref_compdef ai  "install"
+
+alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
+alias b='sinan dist && (echo a | faxien ir)'
+t() { sinan test single_app_test "$@"; }
 alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
+
