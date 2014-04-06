@@ -1,7 +1,6 @@
 ~/scripts/wal.sh
 
 gnome-keyring-daemon&
-xfsettingsd
 
 wicd-client -t&
 
@@ -26,6 +25,5 @@ mpd ~/.mpd/config
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
-
 
 exec ck-launch-session dbus-launch awesome
