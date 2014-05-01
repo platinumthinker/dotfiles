@@ -1,12 +1,9 @@
 ~/scripts/wal.sh
 
-gnome-keyring-daemon&
-
-wicd-client -t&
-
-xrdb /home/thinker/.Xdefaults&
+xrdb -merge /home/thinker/.Xdefaults
 setxkbmap -layout us,ru -variant -option \
-              grp:caps_toggle,terminate:ctrl_alt_bksp &
+              grp:menu_toggle,terminate:ctrl_alt_bksp,\
+              ctrl:swapcaps&
 kbdd &
 xhost +local:&
 
@@ -15,12 +12,6 @@ synclient TapButton1=1 TapButton2=2 TapButton3=3 TouchpadOff=0&
 pamusb-agent&
 
 start-pulseaudio-x11&
-xfce4-volumed&
-clipit &
-blueman-applet &
-dropbox start
-workrave&
-mpd ~/.mpd/config
 
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
