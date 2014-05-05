@@ -5,11 +5,9 @@ nm-applet&
 gnome-keyring-daemon&
 xfsettingsd
 
-xrdb /home/thinker/.Xdefaults&
-xfsettingsd&
-
 setxkbmap -layout us,ru -variant -option \
-              grp:caps_toggle,terminate:ctrl_alt_bksp &
+              grp:menu_toggle,terminate:ctrl_alt_bksp,\
+              ctrl:swapcaps&
 kbdd &
 xhost +local:&
 
@@ -18,6 +16,8 @@ pamusb-agent&
 clipit &
 dropbox start
 workrave&
+
+start-pulseaudio-x11&
 
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true

@@ -25,3 +25,9 @@ alias b='sinan dist && (echo a | faxien ir)'
 t() { sinan test single_app_test "$@"; }
 alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
 
+alias ahi="tac /var/log/dpkg.log | grep 'install ' | less"
+alias ahu="tac /var/log/dpkg.log | grep 'upgrade'  | less"
+alias ahr="tac /var/log/dpkg.log | grep 'remove'   | less"
+
+alias du="du -h"
+alias dh="dh -h"
