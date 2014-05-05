@@ -1,14 +1,6 @@
-# -- THEME AUTO-WRITTEN DO NOT EDIT
+# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
 include "/home/thinker/.themes/Xfce-solarized-dark/gtk-2.0/gtkrc"
 
-style "user-font" {
-	font_name = "DejaVu Sans 10"
-}
+include "/home/thinker/.gtkrc-2.0.mine"
 
-widget_class "*" style "user-font"
-
-gtk-font-name="DejaVu Sans 10"
-
-include "/home/thinker/.gtkrc.mine"
-
-# -- THEME AUTO-WRITTEN DO NOT EDIT
+# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT

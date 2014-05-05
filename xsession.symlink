@@ -6,10 +6,8 @@ gnome-keyring-daemon&
 xfsettingsd
 
 xrdb /home/thinker/.Xdefaults&
-setxkbmap -layout us,ru -variant -option grp:caps_toggle,terminate:ctrl_alt_bksp &
 xfsettingsd&
 
-xrdb /home/thinker/.Xdefaults&
 setxkbmap -layout us,ru -variant -option \
               grp:caps_toggle,terminate:ctrl_alt_bksp &
 kbdd &
@@ -20,11 +18,9 @@ pamusb-agent&
 clipit &
 dropbox start
 workrave&
-mpd ~/.mpd/config
 
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
-
 
 exec ck-launch-session dbus-launch awesome
