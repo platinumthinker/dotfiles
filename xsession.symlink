@@ -7,7 +7,7 @@ xfsettingsd
 
 setxkbmap -layout us,ru -variant -option \
               grp:menu_toggle,terminate:ctrl_alt_bksp,\
-              ctrl:swapcaps&
+              ctrl:nocaps&
 kbdd &
 xhost +local:&
 
