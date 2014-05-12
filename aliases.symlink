@@ -20,11 +20,6 @@ alias adg='sudo apt-get update && sudo apt-get --verbose-versions upgrade'
 alias ai='sudo apt-get install'
 apt_pref_compdef ai "install"
 
-alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
-alias b='sinan dist && (echo a | faxien ir)'
-t() { sinan test single_app_test "$@"; }
-alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
-
 alias ahi="tac /var/log/dpkg.log | grep 'install ' | less"
 alias ahu="tac /var/log/dpkg.log | grep 'upgrade'  | less"
 alias ahr="tac /var/log/dpkg.log | grep 'remove'   | less"
@@ -32,3 +27,10 @@ alias ahr="tac /var/log/dpkg.log | grep 'remove'   | less"
 alias du="du -h"
 alias dh="dh -h"
 alias eman="erl -man"
+
+# For work
+alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
+alias b='sinan dist && (echo a | faxien ir)'
+t() { sinan test single_app_test "$@"; }
+alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
+m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
