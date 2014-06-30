@@ -12,6 +12,8 @@ alias cdu='cd $(ls -rtd */ | tail -1)'
 alias h='history'
 alias j="jobs -l"
 zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
+alias c=clear
+alias r=reset
 
 alias checkinstall='checkinstall --fstrans=no --install=yes'
 alias ag='/usr/bin/ag'
@@ -34,3 +36,5 @@ alias b='sinan dist && (echo a | faxien ir)'
 t() { sinan test single_app_test "$@"; }
 alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
 m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
+agm() { /usr/bin/ag "module\($@"; }
+alias cbm='/home/thinker/scripts/cb_mycelium.sh'

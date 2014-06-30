@@ -1,21 +1,14 @@
-~/scripts/wal.sh
-
-nm-applet&
-
 gnome-keyring-daemon&
-xfsettingsd
+
+xrdb /home/thinker/.Xdefaults&
 
 setxkbmap -layout us,ru -variant -option \
-              grp:rwin_toogle,terminate:ctrl_alt_bksp,\
+              grp:rwin_toggle,terminate:ctrl_alt_bksp, \
               ctrl:nocaps&
 kbdd &
 xhost +local:&
 
-xscreensaver -no-splash &
 pamusb-agent&
-clipit &
-dropbox start
-workrave&
 
 start-pulseaudio-x11&
 
@@ -23,4 +16,4 @@ export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
 
-exec ck-launch-session dbus-launch awesome
+exec dbus-launch awesome
