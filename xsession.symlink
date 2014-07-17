@@ -1,4 +1,7 @@
+xfsettingsd&
+/home/thinker/scripts/wal.sh
 gnome-keyring-daemon&
+start-pulseaudio-x11&
 
 xrdb /home/thinker/.Xdefaults&
 
@@ -7,10 +10,6 @@ setxkbmap -layout us,ru -variant -option \
               ctrl:nocaps&
 kbdd &
 xhost +local:&
-
-pamusb-agent&
-
-start-pulseaudio-x11&
 
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
