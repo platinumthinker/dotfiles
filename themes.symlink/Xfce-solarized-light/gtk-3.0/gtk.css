@@ -38,7 +38,7 @@
     -GtkPaned-handle-size     	     : 4;
     -GtkRange-slider-width           : 12;
     -GtkRange-stepper-size           : 10;
-    -GtkRange-stepper-spacing        : 0;
+    -GtkRange-stepper-spacing        : 1;
     -GtkRange-trough-border          : 0;
     -GtkScrollbar-has-backward-stepper: true;
     -GtkScrollbar-has-secondary-backward-stepper: false;
@@ -47,8 +47,8 @@
     -GtkWidget-focus-line-width      : 1;
     -GtkWidget-focus-padding         : 1;
     -GtkWidget-interior-focus        : true;
-    -GtkWidget-cursor-color          : #073642;
-    -GtkWidget-secondary-cursor-color: #073642;
+    -GtkWidget-cursor-color          : #002b36;
+    -GtkWidget-secondary-cursor-color: #fdf6e3;
     -GtkWidget-cursor-aspect-ratio   : 0.1;
 
     border-width: 1px 1px;
