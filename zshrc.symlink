@@ -54,7 +54,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts
+export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
+#export PATH=$HOME/bin:$PATH:/home/thinker/scripts
 export CDPATH=$CDPATH:/home/thinker:/home/thinker/work/biser/projects:/home/thinker/work
 export TERM=xterm-256color
 # export MANPATH="/usr/local/man:$MANPATH"

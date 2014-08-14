@@ -12,6 +12,7 @@ xterm*jumpScroll:         true
 xterm*multiScroll:        true
 xterm*toolBar:            false
 Xterm*clientDecoration:   none
+xterm*bellIsUrgent:       true
 
 !!================================XFT SETTINGS================================
 Xft.dpi:        96

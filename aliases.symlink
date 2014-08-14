@@ -38,3 +38,6 @@ alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
 m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
 agm() { /usr/bin/ag "module\($@"; }
 alias cbm='/home/thinker/scripts/cb_mycelium.sh'
+
+alias -g g="| grep"
+alias -g u=" && echo -e \"\a\""

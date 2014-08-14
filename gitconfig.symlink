@@ -1,6 +1,6 @@
 [user]
 	name = Andrew Teplyashin
-	email = andrey.teplyashin@eltex.loc
+	email = andrey.teplyashin@gmail.com
 [core]
 	editor = git
 	editor = /usr/bin/vim
@@ -10,12 +10,8 @@
 [merge]
 	tool = fugitive 
 [mergetool "fugitive"]
-    cmd  = vim -f -c "Gdiff" "$MERGED"
-	trustExitCode = true
-    keepBackup = false
-[mergetool "gfugitive"]
-    cmd  = gvim -f -c "Gdiff" "$MERGED"
-	trustExitCode = true
+    cmd  = vim -f -c "Gdiff" "$LOCAL" "$REMOTE"
+	trustExitCode = false
     keepBackup = false
 [push]
 	default = simple
