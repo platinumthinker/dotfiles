@@ -24,11 +24,9 @@ alias ai='sudo apt-get install'
 alias ap='sudo apt-get purge'
 alias ar='sudo apt-get remove'
 
-apt_pref_compdef ai  "install"
-apt_pref_compdef ad  "update"
+apt_pref_compdef ail "install"
 apt_pref_compdef afu "update"
 apt_pref_compdef ag  "upgrade"
-apt_pref_compdef ail "install"
 apt_pref_compdef ap  "purge"
 apt_pref_compdef ar  "remove"
 
