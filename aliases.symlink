@@ -38,3 +38,8 @@ alias ahr="tac /var/log/dpkg.log | grep 'remove'   | less"
 
 alias du="du -h"
 alias dh="dh -h"
+
+alias -g g="| grep"
+alias -g u=" && echo -e \"\a\""
+alias c=clear
+alias r=reset
