@@ -39,8 +39,10 @@ install_dotfiles()
 
 link_clipit()
 {
-    rm $HOME/.local/share/clipit/actions
-    rm $HOME/.config/clipit/clipitrc
+    rm -f $HOME/.local/share/clipit/actions
+    rm -f $HOME/.config/clipit/clipitrc
+    mkdir -p $HOME/.local/share/clipit
+    mkdir -p $HOME/.config/clipit
     link_files $DOTFILES_ROOT/clipit/actions $HOME/.local/share/clipit/actions
     link_files $DOTFILES_ROOT/clipit/clipitrc $HOME/.config/clipit/clipitrc
 }
