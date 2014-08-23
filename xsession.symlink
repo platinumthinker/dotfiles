@@ -1,20 +1,21 @@
-~/scripts/wal.sh
-
 xrdb -merge /home/thinker/.Xdefaults
-setxkbmap -layout us,ru -variant -option \
-              grp:menu_toggle,terminate:ctrl_alt_bksp,\
-              ctrl:nocaps&
+setxkbmap -layout us,ru -variant -option grp:menu_toggle, grp:rwin_toggle,\
+              terminate:ctrl_alt_bksp, ctrl:nocaps
 kbdd &
 xhost +local:&
 
-xscreensaver -no-splash &
 synclient TapButton1=1 TapButton2=2 TapButton3=3 TouchpadOff=0&
 pamusb-agent&
 
 start-pulseaudio-x11&
+xfsettingsd
+
+~/scripts/wal.sh
 
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
+export XDG_CURRENT_DESKTOP=gnome
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-exec ck-launch-session dbus-launch awesome
+exec ck-launch-session dbus-launch --exit-with-session awesome

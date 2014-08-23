@@ -7,4 +7,4 @@ set activate=addons,bookmarks,diverted,downloads,extoptions,help,quickmark,tabop
 set complete=slfS
 
 autocmd LocationChange commafeed.com :normal! <C-z>
-autocmd LocationChange readability.com :normal! <C-z>
+autocmd LocationChange feedly.com :normal! <C-z>

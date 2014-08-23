@@ -31,4 +31,3 @@ Action=org.freedesktop.udisks2.*
 ResultAny=yes
 ResultInactive=yes
 ResultActive=yes" > /etc/polkit-1/localauthority/50-local.d/50-filesystem-mount-internal.pkla
-

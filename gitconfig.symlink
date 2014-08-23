@@ -1,16 +1,14 @@
 [user]
-	name = Andrew Teplyashin
+	name = Andrey Teplyashin
 	email = platinumthinker@gmail.com
 [core]
 	editor = git
 	editor = /usr/bin/vim
 [color]
 	ui = always
-[merge]
-	tool = diffconflicts
-[mergetool "diffconflicts"]
-    cmd = /home/thinker/scripts/diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
-	trustExitCode = true
-    keepBackup = false
+[mergetool "three_way"]
+    cmd = vimdiff $LOCAL $REMOTE $MERGED
+[mergetool "four_way"]
+    cmd = vimdiff $BASE $LOCAL $REMOTE $MERGED
 [push]
 	default = simple

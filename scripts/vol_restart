@@ -1,0 +1,4 @@
+#!/bin/bash
+
+killall -9 xfce4-volumed
+xfce4-volumed
