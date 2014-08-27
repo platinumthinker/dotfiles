@@ -1,4 +1,4 @@
-xrdb -merge /home/thinker/.Xdefaults
+xrdb /home/thinker/.Xdefaults
 setxkbmap -layout us,ru -variant -option grp:menu_toggle, grp:rwin_toggle,\
               terminate:ctrl_alt_bksp, ctrl:nocaps
 kbdd &

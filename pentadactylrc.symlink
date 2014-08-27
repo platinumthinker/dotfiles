@@ -3,8 +3,7 @@ set defsearch=duckduckgo
 set verbose=0
 set guioptions=bCrsn
 set titlestring=
-set activate=addons,bookmarks,diverted,downloads,extoptions,help,quickmark,tabopen,paste
-set complete=slfS
+set activate=addons,bookmarks,diverted,downloads,extoptions,quickmark,tabopen,paste
+set complete=slb
 
-autocmd LocationChange commafeed.com :normal! <C-z>
 autocmd LocationChange feedly.com :normal! <C-z>
