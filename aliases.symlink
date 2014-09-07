@@ -39,5 +39,4 @@ alias dh="dh -h"
 
 alias -g g="| grep"
 alias -g u=" && echo -e \"\a\""
-alias c=clear
 alias r=reset
