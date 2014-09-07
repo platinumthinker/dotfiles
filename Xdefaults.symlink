@@ -27,6 +27,7 @@ URxvt*scrollBar:                       false
 URxvt*saveLines:                       10000
 URxvt*cursorBlink:                     false
 URxvt*font:                            xft:Dejavu Sans Mono for Powerline:size=10
+URxvt*urgentOnBell:                    true
 !!==============================SOLARIZED COLORS==============================
 #define S_base03        #002b36
 #define S_base02        #073642
