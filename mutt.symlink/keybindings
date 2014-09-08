@@ -1,0 +1,65 @@
+# -*-muttrc-*-
+#
+### Key Bindings
+
+bind editor <Esc>t complete-query
+
+bind index j next-entry
+#bind pager j next-line
+bind index k previous-entry
+#bind pager k previous-line
+
+# a bit more like slrn...
+bind index X exit
+bind pager X exit
+bind index x sync-mailbox
+bind pager x sync-mailbox
+
+bind generic b previous-page
+bind generic 1G first-entry
+bind generic 1g first-entry
+bind generic <Home> first-entry
+bind generic G last-entry
+bind generic <End> last-entry
+bind pager i noop
+bind pager \eD delete-thread
+bind pager \eU undelete-thread
+bind pager <Home> top
+bind pager <End> bottom
+bind pager G bottom
+bind pager q exit
+bind pager B bounce-message
+bind pager b previous-page
+bind pager <Insert> previous-entry
+bind pager <Delete> next-entry
+#bind index i fetch-mail
+bind index \eD delete-thread
+bind index \eU undelete-thread
+bind index B bounce-message
+bind index b previous-page
+bind index <Home> first-entry
+bind index <End> last-entry
+bind index G last-entry
+bind index <Right> display-message
+bind pager <Left> exit
+bind pager <Right> view-attachments
+bind attach <Left> exit
+bind attach <Right> view-attach
+bind pager b previous-page
+bind pager - noop
+bind pager <Space> next-page
+bind alias <Tab> next-entry
+
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+#bind index \CP sidebar-prev
+#bind index \CN sidebar-next
+#bind index \CO sidebar-open
+#bind pager \CP sidebar-prev
+#bind pager \CN sidebar-next
+#bind pager \CO sidebar-open
+
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"

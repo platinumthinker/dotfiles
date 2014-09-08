@@ -1,0 +1,24 @@
+# -*-muttrc-*-
+### Accounts settings
+
+set from = "platinumthinker@gmail.com"
+set realname = "Teplyashin Andrey"
+
+set imap_user = "platinumthinker@gmail.com"
+set smtp_url = "smtp://platinumthinker@smtp.gmail.com:587/"
+source "gpg -d ~/.mutt/passwords.gpg|"
+
+set imap_keepalive = 900
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Google Mail]/Drafts"
+
+mailboxes +Gmail/INBOX +GMail/accounts +GMail/code +GMail/personal +GMail/reading
+set trash = "+[Google Mail]/Trash"
+
+set header_cache = ~/.config/mutt/cache/headers
+set header_cache = ~/.config/mutt/cache/bodies
+set header_cache = ~/.config/mutt/certificates
+
+set signature = "~/.config/mutt/signature"

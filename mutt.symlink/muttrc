@@ -1,0 +1,57 @@
+#
+# System configuration file for Mutt
+#
+source "~/.mutt/keybindings"
+source "~/.mutt/color"
+source "~/.mutt/accounts"
+
+# Default list of header fields to weed when displaying.
+# Ignore all lines by default...
+ignore *
+
+# ... then allow these through.
+unignore from: subject to cc date x-mailer x-url user-agent
+
+# Display the fields in this order
+hdr_order date from to cc subject
+
+# Specifies how to sort messages in the index menu.
+set sort=threads
+
+unset bounce_delivered
+
+set mixmaster="mixmaster-filter"
+
+# System-wide CA file managed by the ca-certificates package
+set ssl_ca_certificates_file="/etc/ssl/certs/ca-certificates.crt"
+
+# imitate the old search-body function
+macro index \eb "<search>~b " "search in message bodies"
+
+# simulate the old url menu
+macro index,pager,attach,compose \cb "\
+<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
+<pipe-message> urlview<Enter>\
+<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
+"call urlview to extract URLs out of a message"
+
+macro generic,pager <F1> "<shell-escape> zcat /usr/share/doc/mutt/manual.txt.gz | sensible-pager<enter>" "show Mutt documentation"
+
+macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
+bind browser y exit
+
+mime_lookup application/octet-stream
+
+set time_inc=250
+
+attachments   +A */.*
+attachments   -A text/x-vcard application/pgp.*
+attachments   -A application/x-pkcs7-.*
+
+attachments   +I text/plain
+attachments   -A message/external-body
+attachments   -I message/external-body
+
+#For html mails:
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
