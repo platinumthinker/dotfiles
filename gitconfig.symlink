@@ -10,8 +10,8 @@
 [merge]
 	tool = fugitive 
 [mergetool "fugitive"]
-    cmd  = vim -f -c "Gdiff" "$LOCAL" "$REMOTE"
-	trustExitCode = false
-    keepBackup = false
+    cmd  = vim -f -c "Gdiff" "$MERGED"
+	trustExitCode = false 
+    keepBackup = false 
 [push]
 	default = simple

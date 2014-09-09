@@ -52,20 +52,29 @@ plugins=(autoenv command-not-found debian extract git gnu-utils history lol reba
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
-export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
+# User configuration
+export DESKTOP_SESSION=awesome
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/gvim
+if [ -n "$DISPLAY" ]; then
+	export BROWSER=/usr/bin/iceweasel
+else
+	export BROWSER=/usr/bin/w3m
+fi
+
+export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:/home/thinker/work_scripts
 #export PATH=$HOME/bin:$PATH:/home/thinker/scripts
-export CDPATH=$CDPATH:/home/thinker:/home/thinker/work/biser/projects:/home/thinker/work
+export CDPATH=$CDPATH:/home/thinker/work
 export TERM=xterm-256color
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
