@@ -11,10 +11,9 @@ cl() { cd "$@" && l; }
 alias cdu='cd $(ls -rtd */ | tail -1)'
 alias h='history'
 alias j="jobs -l"
-
-#Alias for primus with libs
-alias opti32='optirun --primus-ldpath=/usr/lib/i386-linux-gnu'
-alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
+zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
+alias c=clear
+alias r=reset
 
 alias checkinstall='checkinstall --fstrans=no --install=yes'
 alias ag='/usr/bin/ag'
@@ -29,6 +28,7 @@ apt_pref_compdef afu "update"
 apt_pref_compdef ag  "upgrade"
 apt_pref_compdef ap  "purge"
 apt_pref_compdef ar  "remove"
+apt_pref_compdef ai "install"
 
 alias ahi="tac /var/log/dpkg.log | grep 'install ' | less"
 alias ahu="tac /var/log/dpkg.log | grep 'upgrade'  | less"
@@ -38,5 +38,16 @@ alias du="du -h"
 alias dh="dh -h"
 
 alias -g g="| grep"
+# Visual bell (urgency)
 alias -g u=" && echo -e \"\a\""
-alias r=reset
+
+alias eman="erl -man"
+
+# For work
+alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
+alias b='sinan dist && (echo a | faxien ir)'
+t() { sinan test single_app_test "$@"; }
+alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
+m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
+agm() { /usr/bin/ag -U -t "module\($@"; }
+alias cbm='/home/thinker/scripts/cb_mycelium.sh'

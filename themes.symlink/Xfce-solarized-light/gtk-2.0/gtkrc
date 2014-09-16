@@ -23,16 +23,16 @@ style "default"
     GtkScrollbar::min_slider_length              = 10
     GtkToolbar::shadow_type                      = out
     GtkWidget::focus-line-width                  = 1
-    GtkWidget::focus_padding                     = 1 
-    GtkWidget::interior_focus                    = 1 
-    GtkWidget::internal_padding                  = 2 
-    GtkEntry::cursor_color                       = "#073642"
-    GtkEntry::secondary_cursor_color             = "#586e75"
-    GtkTextView::cursor_color                    = "#073642"
-    GtkTextView::secondary_cursor_color          = "#586e75"
+    GtkWidget::focus_padding                     = 1
+    GtkWidget::interior_focus                    = 1
+    GtkWidget::internal_padding                  = 2
+    GtkEntry::cursor_color                       = "#002b36"
+    GtkEntry::secondary_cursor_color             = "#fdf6e3"
+    GtkTextView::cursor_color                    = "#002b36"
+    GtkTextView::secondary_cursor_color          = "#fdf6e3"
     GtkEntry::cursor_aspect_ratio                = 0.1
     GtkEntry::cursor_aspect_ratio                = 0.1
-    
+
     xthickness             = 1
     ythickness             = 1
 
@@ -61,7 +61,7 @@ style "default"
     text[PRELIGHT]    = "#fdf6e3"
     text[SELECTED]    = "#002b36"
 
-    engine "xfce" 
+    engine "xfce"
     {
 	smooth_edge = true
         boxfill
@@ -89,7 +89,7 @@ style "button" = "default"
     xthickness = 2
     ythickness = 2
 
-    engine "xfce" 
+    engine "xfce"
     {
         smooth_edge = true
         grip_style = none
@@ -108,10 +108,6 @@ widget_class "*button*"            style "button"
 class "*button*"                   style "button"
 widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
-# widget_class "*Tree*"            style "button"
-# class "*Tree*"                   style "button"
-# widget_class "*GtkScale*"        style "button"
-# class "*GtkScale*"               style "button"
 
 style "sbstyle" = "default"
 {

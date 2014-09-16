@@ -12,9 +12,15 @@ success()
     printf "\r\033[2K [ \033[00;32m0K\033[0m ] $1\n"
 }
 
-link_files () 
+link_files() 
 {
-    ln -s $1 $2
+    ln -f -s $1 $2
+    success "linked $1 to $2"
+}
+
+sudo_link_files() 
+{
+    sudo ln -f -s $1 $2
     success "linked $1 to $2"
 }
 
@@ -39,25 +45,25 @@ install_dotfiles()
 
 link_clipit()
 {
-    rm -f $HOME/.local/share/clipit/actions
-    rm -f $HOME/.config/clipit/clipitrc
-    mkdir -p $HOME/.local/share/clipit
-    mkdir -p $HOME/.config/clipit
+    rm -rf $HOME/.local/share/clipit/
+    rm -rf $HOME/.config/clipit/
+    mkdir -p $HOME/.local/share/clipit/
+    mkdir -p $HOME/.config/clipit/
     link_files $DOTFILES_ROOT/clipit/actions $HOME/.local/share/clipit/actions
     link_files $DOTFILES_ROOT/clipit/clipitrc $HOME/.config/clipit/clipitrc
 }
 
-install_dotfilesi_root()
+install_dotfiles_root()
 {
-    sudo link_files $DOTFILES_ROOT/fonts.symlink /root/.fonts
-    sudo link_files $DOTFILES_ROOT/zshrc.symlink /root/.zshrc
-    sudo link_files $DOTFILES_ROOT/bashrc.symlink /root/.bashrc
-    sudo link_files $DOTFILES_ROOT/aliases.symlink /root/.aliases
-    sudo link_files $HOME/.oh-my-zsh /root/.oh-my-zsh
-    sudo link_files $DOTFILES_ROOT/gtkrc-2.0.symlink /root/.gtkrc-2.0
-    sudo link_files $DOTFILES_ROOT/gtkrc.symlink /root/.gtkrc
+    sudo_link_files $DOTFILES_ROOT/fonts.symlink /root/.fonts
+    sudo_link_files $DOTFILES_ROOT/themes.symlink /root/.themes
+    sudo_link_files $DOTFILES_ROOT/zshrc.symlink /root/.zshrc
+    sudo_link_files $DOTFILES_ROOT/bashrc.symlink /root/.bashrc
+    sudo_link_files $DOTFILES_ROOT/aliases.symlink /root/.aliases
+    sudo_link_files $HOME/.oh-my-zsh /root/.oh-my-zsh
+    sudo_link_files $DOTFILES_ROOT/gtkrc-2.0.symlink /root/.gtkrc-2.0
 }
 
 install_dotfiles
-install_dotfilesi_root
+install_dotfiles_root
 success "All installed!"

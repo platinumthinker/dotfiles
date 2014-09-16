@@ -1,4 +1,4 @@
-xrdb /home/thinker/.Xdefaults
+xrdb ~/.Xdefaults
 setxkbmap -layout us,ru -variant -option grp:rwin_toggle,\
 	caps:swapescape, ctrl:swap_lalt_lctl
 kbdd &

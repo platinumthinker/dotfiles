@@ -8,7 +8,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kennethreitz"
+ZSH_THEME="minimal"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,15 +48,15 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autoenv command-not-found debian extract git gnu-utils history lol pip pyenv vundle)
+plugins=(autoenv command-not-found debian extract git gnu-utils history lol rebar vundle)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/thinker/scripts/
-export CDPATH=$CDPATH:/media/media/:/home/thinker/develop/
-export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/site.py
+export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
+export CDPATH=$CDPATH:/home/thinker:/home/thinker/work/biser/projects:/home/thinker/work
+export TERM=xterm-256color
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

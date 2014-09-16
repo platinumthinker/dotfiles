@@ -4,11 +4,18 @@
 [core]
 	editor = git
 	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore
 [color]
-	ui = always
-[mergetool "three_way"]
-    cmd = vimdiff $LOCAL $REMOTE $MERGED
-[mergetool "four_way"]
-    cmd = vimdiff $BASE $LOCAL $REMOTE $MERGED
+	ui = auto
+[alias]
+    lg = log --abbrev-commit --decorate --pretty=oneline
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+[merge]
+	tool = fugitive
+[mergetool "fugitive"]
+    cmd  = vim -f -c \"Gdiff\" \"$LOCAL\" \"$REMOTE\"
+	trustExitCode = true
+    keepBackup = false
+    keepTemporaries = false
 [push]
 	default = simple
