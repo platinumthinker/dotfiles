@@ -1,5 +1,5 @@
 xrdb ~/.Xdefaults
-setxkbmap -layout us,ru -variant -option grp:rwin_toggle
+setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps
 xmodmap ~/.xmodmaprc
 kbdd &
 xhost +local:&
