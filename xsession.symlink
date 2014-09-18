@@ -1,6 +1,6 @@
 xrdb ~/.Xdefaults
-setxkbmap -layout us,ru -variant -option grp:rwin_toggle,\
-	caps:swapescape, ctrl:swap_lalt_lctl
+setxkbmap -layout us,ru -variant -option grp:rwin_toggle
+xmodmap ~/.xmodmaprc
 kbdd &
 xhost +local:&
 
