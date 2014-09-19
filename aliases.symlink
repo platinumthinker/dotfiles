@@ -48,6 +48,6 @@ alias -g u=" && echo -e \"\a\""
 alias deps_in_erl_lib="export ERL_LIBS=~/erlware/lib:./deps"
 
 # For rebar
-alias rgc='rebar get-deps compile'
+alias ruc='rebar update-deps compile'
 alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
