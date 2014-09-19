@@ -1,5 +1,4 @@
 # some more ls aliases
-alias py='python'
 alias ll="ls -l"
 alias la='ls -la'
 alias l='ls -CF'
@@ -48,6 +47,22 @@ alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
 alias b='sinan dist && (echo a | faxien ir)'
 t() { sinan test single_app_test "$@"; }
 alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
+# ecss_mycelium start
 m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
-agm() { /usr/bin/ag -U -t "module\($@"; }
+
 alias cbm='/home/thinker/scripts/cb_mycelium.sh'
+# search module with silverseacher
+agm() { /usr/bin/ag "module\($@"; }
+alias bm='~/work_scripts/build_mycelium.sh'
+alias se='~/work_scripts/swap_erlware.sh'
+alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
+gco_deps() { for i in ./deps/*; do cd $i; echo $i; git checkout "$@"; cd ../..; done}
+compdef _git gco_deps=git-checkout
+alias -g gr="| grep"
+alias -g u=" && echo -e \"\a\""
+alias deps_in_erl_lib="export ERL_LIBS=~/erlware/lib:./deps"
+
+# For rebar
+alias ruc='rebar update-deps compile'
+alias r='rebar clean get-deps compile'
+alias rc='rebar compile'
