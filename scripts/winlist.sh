@@ -1,5 +1,7 @@
 #!/bin/bash
 
+##For print list windows in active desktop
+
 DMENU="dmenu.xft -fn \"FiraMono-11\" -nb #002b36 -nf #657b83 -sb #002b36 -sf #fdce59"
 
 deskID=$(wmctrl -d | grep "  \* " | grep -o -E "[0-9]+[[:space:]]")
