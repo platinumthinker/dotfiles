@@ -12,4 +12,6 @@ export GDK_USE_XFT=1
 export XDG_CURRENT_DESKTOP=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+xfsettingsd
+
 exec ck-launch-session dbus-launch --exit-with-session awesome

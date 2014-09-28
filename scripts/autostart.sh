@@ -4,11 +4,10 @@ do
 	killall -9 $i;
 done
 
-wmname LG3D&
-xfsettingsd&
+wmname LG3D
+xfsettingsd
 gnome-keyring-daemon&
 thunar --daemon&
-wicd-client -t -a&
 blueman-applet&
 workrave&
 dropbox start&
