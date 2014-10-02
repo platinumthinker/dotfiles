@@ -63,8 +63,9 @@ else
 	export BROWSER=/usr/bin/w3m
 fi
 
-export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
-export CDPATH=$CDPATH:/home/thinker:/home/thinker/develop/:/home/thinker/develop/repos
+# export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
+export PATH=$HOME/bin:$PATH:/home/thinker/scripts:PATH
+export CDPATH=$CDPATH:/home/thinker:/home/thinker/develop/:/home/thinker/develop/repos/
 export TERM=xterm-256color
 
 # Preferred editor for local and remote sessions

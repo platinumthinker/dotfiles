@@ -61,8 +61,10 @@ compdef _git gco_deps=git-checkout
 alias -g gr="| grep"
 alias -g u=" && echo -e \"\a\""
 alias deps_in_erl_lib="export ERL_LIBS=~/erlware/lib:./deps"
+alias gre="git commit -am \"Rebarized project\""
 
 # For rebar
 alias ruc='rebar update-deps compile'
 alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
+graphviz() {dot "$@" -Tps | /usr/bin/gv -}
