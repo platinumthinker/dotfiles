@@ -66,3 +66,9 @@ alias deps_in_erl_lib="export ERL_LIBS=~/erlware/lib:./deps"
 alias ruc='rebar update-deps compile'
 alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
+
+#Alias for primus with libs
+alias opti32='optirun --primus-ldpath=/usr/lib/i386-linux-gnu'
+alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
+alias random_pswd='apg -a 1'
+alias vimlight='VIM_LIGHT_COLOR=true vim'
