@@ -68,3 +68,10 @@ alias ruc='rebar update-deps compile'
 alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
+
+# Aliases for dir
+hash -d erlslib='/usr/lib/erlang/lib'
+hash -d erlhlib='/home/thinker/erlware/lib'
+
+alias vas='vim src/$(basename $(pwd)).app.src'
+alias va='vim ebin/$(basename $(pwd)).app'
