@@ -4,6 +4,7 @@ xmodmap ~/.xmodmaprc
 kbdd &
 xhost +local:&
 
+gnome-settings-daemon &
 ~/scripts/wal.sh
 
 export AWT_TOOLKIT=XToolkit

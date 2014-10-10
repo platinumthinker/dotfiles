@@ -5,6 +5,9 @@ source "~/.mutt/keybindings"
 source "~/.mutt/color"
 source "~/.mutt/accounts"
 
+#Set default editor
+set editor='vim "+normal \\ec" +/^$/'
+
 # Default list of header fields to weed when displaying.
 # Ignore all lines by default...
 ignore *
@@ -27,6 +30,10 @@ set ssl_ca_certificates_file="/etc/ssl/certs/ca-certificates.crt"
 
 # imitate the old search-body function
 macro index \eb "<search>~b " "search in message bodies"
+
+# For search contacts in abook (Q)
+set query_command="abook --mutt-query '%s'"
+macro index,pager a "|abook --add-email\n" 'add sender to abook'
 
 # simulate the old url menu
 macro index,pager,attach,compose \cb "\
