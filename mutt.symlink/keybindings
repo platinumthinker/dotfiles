@@ -5,9 +5,9 @@
 bind editor <Esc>t complete-query
 
 bind index j next-entry
-#bind pager j next-line
+bind pager j next-line
 bind index k previous-entry
-#bind pager k previous-line
+bind pager k previous-line
 
 # a bit more like slrn...
 bind index X exit
@@ -63,3 +63,36 @@ macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+
+# imitate the old search-body function
+macro index \eb "<search>~b " "search in message bodies"
+
+# For search contacts in abook (Q)
+set query_command="abook --mutt-query '%s'"
+macro index,pager a "|abook --add-email\n" 'add sender to abook'
+
+# simulate the old url menu
+macro index,pager,attach,compose \cb "\
+<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
+<pipe-message> urlview<Enter>\
+<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
+"call urlview to extract URLs out of a message"
+
+macro generic,pager <F1> "<shell-escape> zcat /usr/share/doc/mutt/manual.txt.gz | sensible-pager<enter>" "show Mutt documentation"
+
+macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
+bind browser y exit
+
+#-----------------------#
+# Gmail-specific macros #
+#-----------------------#
+# to delete more than 1 message, just mark them with "t" key and then do "d" on them
+macro index d ";s+[Gmail]/Trash<enter><enter>" "Move to Gmail's Trash"
+# delete message, but from pager (opened email)
+macro pager d "s+[Gmail]/Trash<enter><enter>"  "Move to Gmail's Trash"
+# undelete messages
+macro index u ";s+INBOX<enter><enter>"         "Move to Gmail's INBOX"
+macro pager u "s+INBOX<enter><enter>"          "Move to Gmail's INBOX"
+
+macro index,pager \cB ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
+# vim: set ft=muttrc:

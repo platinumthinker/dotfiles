@@ -1,6 +1,12 @@
 # -*-muttrc-*-
 ### Accounts settings
-
+set mbox_type=maildir
+set mbox="~/mail/inbox/"
+set spoolfile="~/mail/inbox/"
+set folder="~/mail/"
+set record="~/mail/sent/"
+set postponed="~/mail/postponed/"
+#Gmail account info  
 set from = "platinumthinker@gmail.com"
 set realname = "Teplyashin Andrey"
 
@@ -22,3 +28,8 @@ set header_cache = ~/.config/mutt/cache/bodies
 set header_cache = ~/.config/mutt/certificates
 
 set signature = "~/.config/mutt/signature"
+
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"

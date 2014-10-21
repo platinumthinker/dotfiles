@@ -6,7 +6,7 @@ source "~/.mutt/color"
 source "~/.mutt/accounts"
 
 #Set default editor
-set editor='vim "+normal \\ec" +/^$/'
+set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'  
 
 # Default list of header fields to weed when displaying.
 # Ignore all lines by default...
@@ -28,24 +28,6 @@ set mixmaster="mixmaster-filter"
 # System-wide CA file managed by the ca-certificates package
 set ssl_ca_certificates_file="/etc/ssl/certs/ca-certificates.crt"
 
-# imitate the old search-body function
-macro index \eb "<search>~b " "search in message bodies"
-
-# For search contacts in abook (Q)
-set query_command="abook --mutt-query '%s'"
-macro index,pager a "|abook --add-email\n" 'add sender to abook'
-
-# simulate the old url menu
-macro index,pager,attach,compose \cb "\
-<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
-<pipe-message> urlview<Enter>\
-<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
-"call urlview to extract URLs out of a message"
-
-macro generic,pager <F1> "<shell-escape> zcat /usr/share/doc/mutt/manual.txt.gz | sensible-pager<enter>" "show Mutt documentation"
-
-macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
-bind browser y exit
 
 mime_lookup application/octet-stream
 
@@ -61,4 +43,19 @@ attachments   -I message/external-body
 
 #For html mails:
 set mailcap_path = ~/.mutt/mailcap
+
+# Check for mail every minute for current IMAP mailbox every 1 min
+set timeout         = 60
+# Check for new mail in ALL mailboxes every 2 min
+set mail_check      = 120
+# keep imap connection alive by polling intermittently (time in seconds)
+set imap_keepalive  = 300
+# allow mutt to open new imap connection automatically
+unset imap_passive
+# store message headers locally to speed things up
+# (the ~/.mutt folder MUST exist! Arch does not create it by default)
+set header_cache    = ~/.mutt/hcache
+# sort mail by threads
+set sort            = threads
+
 auto_view text/html
