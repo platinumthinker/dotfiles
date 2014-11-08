@@ -84,5 +84,7 @@ alias random_pswd='apg -a 1'
 alias vimlight='VIM_LIGHT_COLOR=true vim'
 alias sshwork='ssh -A -t think-cloud ssh -A -t think-eltex'
 
+tophistory() {history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
+
 # vim: set ft=sh:
 
