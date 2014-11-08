@@ -53,6 +53,7 @@ m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
 alias cbm='/home/thinker/scripts/cb_mycelium.sh'
 # search module with silverseacher
 agm() { /usr/bin/ag "module\($@"; }
+agb() { /usr/bin/ag "behaviour\($@"; }
 alias bm='~/work_scripts/build_mycelium.sh'
 alias se='~/work_scripts/swap_erlware.sh'
 alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
@@ -67,6 +68,7 @@ alias gre="git commit -am \"Rebarized project\""
 alias ruc='rebar update-deps compile'
 alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
+alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
 
 # Aliases for dir
@@ -88,3 +90,5 @@ tophistory() {history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a
 
 # vim: set ft=sh:
 
+alias dia='dialyzer -n $(find deps -maxdepth 1 -mindepth 1 -type d -printf " -pa %p"| sed "/^\.$/d") $(find deps -name "*.beam" -printf " %p")'
+alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps && xmodmap ~/.xmodmaprc'

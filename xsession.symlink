@@ -5,6 +5,7 @@ kbdd &
 xhost +local:&
 
 gnome-settings-daemon &
+xrandr --output VGA-1 --primary --left-of DVI-I-1&
 ~/scripts/wal.sh
 
 export AWT_TOOLKIT=XToolkit

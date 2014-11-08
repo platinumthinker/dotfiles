@@ -24,10 +24,9 @@
 [merge]
 	tool = fugitive
 [mergetool "fugitive"]
-    cmd  = vim -f -c \"Gdiff\" -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
+    cmd  = vim -f -c \"Gvdiff\" -d \"$MERGED\"
+    trustExitCode = false
     keepBackup = false
-    keepTemporaries = false
 [push]
 	default = simple
 [tig]
