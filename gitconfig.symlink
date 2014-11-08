@@ -30,3 +30,25 @@
     keepTemporaries = false
 [push]
 	default = simple
+[tig]
+    show-author = full
+    show-date = short
+    show-refs = true
+    show-rev-graph = true
+    show-line-numbers = yes
+    line-number-interval = 10
+    horizontal-scroll = 20%
+[tig "color"]
+    title-focus = default darkcyan
+    title-blur = default darkcyan
+    # Main view
+    main-tag = red default bold
+    main-local-tag = red default
+    main-remote = green default
+    main-replace = blue default
+    main-ref = cyan default
+    main-head = cyan default bold
+    # Status view
+    stat-staged = red default
+    stat-unstaged = orange default
+    stat-untracked = magenta default
