@@ -30,13 +30,15 @@
 [push]
 	default = simple
 [tig]
-    show-author = full
-    show-date = short
-    show-refs = true
-    show-rev-graph = true
-    show-line-numbers = yes
-    line-number-interval = 10
+    ignore-case = yes
+    wrap-lines = yes
+    ignore-space = all
     horizontal-scroll = 20%
+    show-changes = yes
+    show-notes = yes
+    vertical-split = false
+    line-graphics = utf-8
+    tab-size = 4
 [tig "color"]
     title-focus = default darkcyan
     title-blur = default darkcyan
