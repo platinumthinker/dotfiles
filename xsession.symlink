@@ -1,17 +1,17 @@
-xrdb ~/.Xdefaults
-setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps
-xmodmap ~/.xmodmaprc
-kbdd &
-xhost +local:&
-
-gnome-settings-daemon &
-xrandr --output VGA-1 --primary --left-of DVI-I-1&
-~/scripts/wal.sh
-
 export AWT_TOOLKIT=XToolkit
 export QT_XFT=true
 export GDK_USE_XFT=1
 export XDG_CURRENT_DESKTOP=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+xrandr --output DVI-I-1 --right-of VGA-1 --primary
+xrdb ~/.Xdefaults
+setxkbmap -layout us,ru -variant -option grp:rwin_toggle
+kbdd &
+xhost +local:&
+unclutter idle=1
+clipit&
+
+~/scripts/wal.sh
 
 exec ck-launch-session dbus-launch --exit-with-session awesome

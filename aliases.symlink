@@ -22,11 +22,6 @@ alias ai='sudo apt-get install'
 alias ap='sudo apt-get purge'
 alias ar='sudo apt-get remove'
 
-apt_pref_compdef ail "install"
-apt_pref_compdef afu "update"
-apt_pref_compdef ag  "upgrade"
-apt_pref_compdef ap  "purge"
-apt_pref_compdef ar  "remove"
 apt_pref_compdef ai "install"
 
 alias ahi="tac /var/log/dpkg.log | grep 'install ' | less"
@@ -74,6 +69,8 @@ graphviz() {dot "$@" -Tps | /usr/bin/gv -}
 # Aliases for dir
 hash -d erlslib='/usr/lib/erlang/lib'
 hash -d erlhlib='/home/thinker/erlware/lib'
+hash -d d='/home/thinker/develop/repos/'
+hash -d a='/home/thinker/develop/repos/all/deps/'
 
 alias vas='vim src/$(basename $(pwd)).app.src'
 alias va='vim ebin/$(basename $(pwd)).app'
@@ -92,4 +89,19 @@ create_tar() {tar -zcvf $(basename $1).tar.gz $1}
 # vim: set ft=sh:
 
 alias dia='dialyzer -n $(find deps -maxdepth 1 -mindepth 1 -type d -printf " -pa %p"| sed "/^\.$/d") $(find deps -name "*.beam" -printf " %p")'
-alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps && xmodmap ~/.xmodmaprc'
+alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle'
+alias mtr='mtr --curses'
+alias git_status_on='git config --add oh-my-zsh.hide-status 0'
+alias git_status_off='git config --add oh-my-zsh.hide-status 1'
+
+alias jenkins='java -jar /home/thinker/develop/jenkins-cli.jar -s http://biser.eltex.loc'
+alias last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
+alias last_docker_id='docker ps -l -q'
+last_ssh() {sshpass -p $2 ssh -o StrictHostKeyChecking=no -p 8023 $1@$(last_ip) ${@:3}}
+alias last_logs='docker logs $(last_docker_id)'
+alias dialyzer_deps='dialyzer --output_plt deps.plt --build_plt --apps $(find deps -maxdepth 1 -mindepth 1 -type d -not -name "*rebar_vsn_plugin" -printf " %p"| sed "/^\.$/d") -r deps > deps_dializer.log'
+alias dialyzer_app='dialyzer -r ./ebin/ -I ./include/ $(find deps -maxdepth 1 -mindepth 1 -type d -not -name "*rebar_vsn_plugin" -printf " -pa %p"| sed "/^\.$/d") --plts ./deps.plt ~/.dialyzer_plt --fullpath -Wno_return > dialyzer.log'
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias :q='echo It is not vim'
+alias gl='git pull && git submodule update --init --recursive'
+alias ssw_run='docker run -it --rm --hostname=ecss1 --add-host broker.remote:127.0.0.1 --privileged=true -v /dev/bus/usb:/dev/bus/usb -v $PWD:/rel -v /lib/modules:/lib/modules -p 443:443/tcp -p 4000-4030:4000-4030/udp -p 8000:8000/tcp -p 8086:8086/tcp -p 9999:9999/tcp -p 5060:5060/tcp -p 5060:5060/udp ssw_deploy /bin/bash'

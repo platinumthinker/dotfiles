@@ -53,3 +53,5 @@
     stat-staged = red default
     stat-unstaged = orange default
     stat-untracked = magenta default
+[rerere]
+	enabled = 1
