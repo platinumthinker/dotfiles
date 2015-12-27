@@ -2,8 +2,6 @@
 alias ll="ls -l"
 alias la='ls -la'
 alias l='ls -CF'
-alias v='vim'
-alias gv='gvim'
 alias tmux='TERM=screen-256color-bce tmux'
 alias cal='ncal -b -M'
 cl() { cd "$@" && l; }
@@ -37,35 +35,12 @@ alias -g u=" && echo -e \"\a\""
 
 alias eman="erl -man"
 
-# For work
-alias cb='sinan clean && sinan dist && (echo a | faxien ir)'
-alias b='sinan dist && (echo a | faxien ir)'
-t() { sinan test single_app_test "$@"; }
-alias fu='faxien upgrade-all-apps && faxien upgrade-all-releases'
-# ecss_mycelium start
-m() { let port=$1+5673; ecss_mycelium mycelium$1 $port; }
-
-alias cbm='/home/thinker/scripts/cb_mycelium.sh'
 # search module with silverseacher
 agm() { /usr/bin/ag "module\($@"; }
 agb() { /usr/bin/ag "behaviour\($@"; }
-alias bm='~/work_scripts/build_mycelium.sh'
-alias se='~/work_scripts/swap_erlware.sh'
-alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
-gco_deps() { for i in ./deps/*; do cd $i; echo $i; git checkout "$@"; cd ../..; done}
-compdef _git gco_deps=git-checkout
 alias -g gr="| grep"
-alias -g u=" && echo -e \"\a\""
-alias deps_in_erl_lib="export ERL_LIBS=~/erlware/lib:./deps"
-alias gre="git commit -am \"Rebarized project\""
 
-# For rebar
-alias ruc='rebar update-deps compile'
-alias r='rebar clean get-deps compile'
-alias rc='rebar compile'
-alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
-
 # Aliases for dir
 hash -d erlslib='/usr/lib/erlang/lib'
 hash -d erlhlib='/home/thinker/erlware/lib'
@@ -75,18 +50,14 @@ hash -d a='/home/thinker/develop/repos/all/deps/'
 alias vas='vim src/$(basename $(pwd)).app.src'
 alias va='vim ebin/$(basename $(pwd)).app'
 
-#Alias for primus with libs
-alias opti32='optirun --primus-ldpath=/usr/lib/i386-linux-gnu'
-alias opti64='optirun --primus-ldpath=/usr/lib/x86_64-linux-gnu'
 alias random_pswd='apg -a 1'
 
 alias vimlight='VIM_LIGHT_COLOR=true vim'
 alias sshwork='ssh -A -t think-cloud ssh -A -t think-eltex'
 
+rmbigdir() {ls -f $1 | xargs -n 100 rm}
 tophistory() {history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
 create_tar() {tar -zcvf $(basename $1).tar.gz $1}
-
-# vim: set ft=sh:
 
 alias dia='dialyzer -n $(find deps -maxdepth 1 -mindepth 1 -type d -printf " -pa %p"| sed "/^\.$/d") $(find deps -name "*.beam" -printf " %p")'
 alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle'
@@ -105,3 +76,5 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias :q='echo It is not vim'
 alias gl='git pull && git submodule update --init --recursive'
 alias ssw_run='docker run -it --rm --hostname=ecss1 --add-host broker.remote:127.0.0.1 --privileged=true -v /dev/bus/usb:/dev/bus/usb -v $PWD:/rel -v /lib/modules:/lib/modules -p 443:443/tcp -p 4000-4030:4000-4030/udp -p 8000:8000/tcp -p 8086:8086/tcp -p 9999:9999/tcp -p 5060:5060/tcp -p 5060:5060/udp ssw_deploy /bin/bash'
+alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps && xmodmap ~/.xmodmaprc'
+# vim: set ft=sh:

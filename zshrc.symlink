@@ -1,39 +1,23 @@
-# Path to your oh-my-zsh configuration.
-# zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-# zstyle ':completion:*' cache-path ~/.zsh/cache
 # skip_global_compinit=1
 
 export ZSH=$HOME/.oh-my-zsh
-
-# Path to my custom plugins/themes
 ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="kennethreitz"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Uncomment this to disable bi-weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
- DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
+DISABLE_LS_COLORS="true"
 # DISABLE_AUTO_TITLE="true"
+DISABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+HIST_STAMPS="dd-mm-yyyy"
 
+<<<<<<< d567df2fbe5fe9f42161568bb974a27499992ece
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
 
@@ -54,14 +38,19 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(debian git rebar command-not-found docker gnu-utils lol)
+=======
+plugins=(command-not-found debian git gnu-utils history rebar vim-interaction vi-mode)
+>>>>>>> Updates
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 export DESKTOP_SESSION=awesome
 export EDITOR=/usr/bin/vim
+<<<<<<< d567df2fbe5fe9f42161568bb974a27499992ece
 # export VISUAL=/usr/bin/gvim
+=======
+>>>>>>> Updates
 
 if [ -n "$DISPLAY" ]; then
 	export BROWSER=/usr/bin/iceweasel
@@ -69,8 +58,13 @@ else
 	export BROWSER=/usr/bin/w3m
 fi
 
+<<<<<<< d567df2fbe5fe9f42161568bb974a27499992ece
 export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
 # export PATH=$HOME/bin:$PATH:/home/thinker/scripts:PATH
+=======
+# export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
+export PATH=$HOME/bin:$PATH:/home/thinker/scripts:/home/thinker/develop/android-studio/bin
+>>>>>>> Updates
 export ERL_LIBS=~/develop/repos/private_lib/
 export CDPATH=$CDPATH:/home/thinker:/home/thinker/develop/:/home/thinker/develop/repos/:/home/thinker/develop/repos/all/deps/
 export TERM=xterm-256color
@@ -81,12 +75,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Vi mode
 #set -o vi
@@ -110,3 +98,5 @@ export RELX="relx --system_libs=/home/thinker/erlware/lib/ --dev-mode"
 export DIALYZER_CHECK_PT_OPTIONS="on"
 
 source ~/.fzf.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

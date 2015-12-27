@@ -12,7 +12,7 @@ set realname = "Teplyashin Andrey"
 
 set imap_user = "platinumthinker@gmail.com"
 set smtp_url = "smtp://platinumthinker@smtp.gmail.com:587/"
-source "gpg -d ~/.mutt/passwords.gpg|"
+set imap_pass = `gpg -d ~/.mutt/passwords.gpg | awk '/GMail:/ {print $2}'`
 
 set imap_keepalive = 900
 
