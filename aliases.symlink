@@ -38,7 +38,6 @@ alias eman="erl -man"
 # search module with silverseacher
 agm() { /usr/bin/ag "module\($@"; }
 agb() { /usr/bin/ag "behaviour\($@"; }
-alias -g gr="| grep"
 
 alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
 gco_deps() { for i in ./deps/*; do cd $i; echo $i; git checkout "$@"; cd ../..; done}
@@ -51,6 +50,8 @@ alias ruc='fd up && rebar compile'
 alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
 alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
+
+alias -g gr="| grep"
 
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
 # Aliases for dir
@@ -73,6 +74,7 @@ rmbigdir() {ls -f $1 | xargs -n 100 rm}
 tophistory() {history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
 create_tar() {tar -zcvf $(basename $1).tar.gz $1}
 
+alias dia='dialyzer -n $(find deps -maxdepth 1 -mindepth 1 -type d -printf " -pa %p"| sed "/^\.$/d") $(find deps -name "*.beam" -printf " %p")'
 alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle'
 alias mtr='mtr --curses'
 alias git_status_on='git config --add oh-my-zsh.hide-status 0'
@@ -125,3 +127,5 @@ vs() {
 
 alias TERMINAL='lxterm'
 alias steam='STEAM_RUNTIME=0 steam'
+alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps && xmodmap ~/.xmodmaprc'
+# vim: set ft=sh:
