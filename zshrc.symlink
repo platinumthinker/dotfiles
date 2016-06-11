@@ -1,4 +1,9 @@
 zstyle ':completion:*' use-cache on
+zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
+        'local-directories named-directories'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format %d
+# zstyle ':completion:*' cache-path ~/.zsh/cache
 # skip_global_compinit=1
 
 export ZSH=$HOME/.oh-my-zsh
@@ -12,12 +17,16 @@ ZSH_THEME="kennethreitz"
 DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd-mm-yyyy"
 
-<<<<<<< d567df2fbe5fe9f42161568bb974a27499992ece
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
 
@@ -37,20 +46,14 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(debian git rebar command-not-found docker gnu-utils lol)
-=======
-plugins=(command-not-found debian git gnu-utils history rebar vim-interaction vi-mode)
->>>>>>> Updates
+plugins=(command-not-found debian git gnu-utils history rebar vim-interaction vi-mode docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export DESKTOP_SESSION=awesome
 export EDITOR=/usr/bin/vim
-<<<<<<< d567df2fbe5fe9f42161568bb974a27499992ece
 # export VISUAL=/usr/bin/gvim
-=======
->>>>>>> Updates
 
 if [ -n "$DISPLAY" ]; then
 	export BROWSER=/usr/bin/iceweasel
@@ -58,23 +61,22 @@ else
 	export BROWSER=/usr/bin/w3m
 fi
 
-<<<<<<< d567df2fbe5fe9f42161568bb974a27499992ece
 export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
 # export PATH=$HOME/bin:$PATH:/home/thinker/scripts:PATH
-=======
 # export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
-export PATH=$HOME/bin:$PATH:/home/thinker/scripts:/home/thinker/develop/android-studio/bin
->>>>>>> Updates
+# export PATH=$HOME/bin:$PATH:/home/thinker/scripts:/home/thinker/develop/android-studio/bin
+# export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts
+export PATH=$HOME/bin:$PATH:/home/thinker/scripts:/home/thinker/develop/free_repos/dasht/bin
 export ERL_LIBS=~/develop/repos/private_lib/
 export CDPATH=$CDPATH:/home/thinker:/home/thinker/develop/:/home/thinker/develop/repos/:/home/thinker/develop/repos/all/deps/
 export TERM=xterm-256color
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+#else
+#  export EDITOR='vim'
+#fi
 
 # Vi mode
 #set -o vi
@@ -94,7 +96,7 @@ export HISTSIZE=1000000
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
-export RELX="relx --system_libs=/home/thinker/erlware/lib/ --dev-mode"
+export RELX="relx -l $ERL_LIBS --dev-mode"
 export DIALYZER_CHECK_PT_OPTIONS="on"
 
 source ~/.fzf.zsh

@@ -1,5 +1,5 @@
 [general]
-targets = my_github, redmine.eltex
+targets = redmine.eltex.SSW, redmine.eltex.ECSS-10
 
 # If unspecified, the default taskwarrior config will be used.
 #taskrc = /path/to/.taskrc
@@ -18,12 +18,12 @@ inline_links = True
 # from remote sources, but before they are synced to the TW db. If your
 # pre_import script has a non-zero exit code, the `bugwarrior-pull` command will
 # exit early.
-[hooks]
-pre_import = /home/someuser/backup.sh, /home/someuser/sometask.sh
+# [hooks]
+# pre_import = /home/someuser/backup.sh, /home/someuser/sometask.sh
 
 [notifications]
-# notifications = True
-# backend = growlnotify
+notifications = False
+backend = pynotify
 # finished_querying_sticky = False
 # task_crud_sticky = True
 # only_on_new_tasks = True
@@ -38,10 +38,18 @@ github.username = platinumthinker
 github.login = PlatinumThinker
 github.password = OMG_LULZ
 
-[my_redmine]
+[redmine.eltex.SSW]
 service = redmine
-redmine.url = http://redmine.eltex.loc/
-redmine.key = aaaa
-redmine.user_id = 7
-redmine.project_name = redmine
-add_tags = chiliproject
+redmine.url = http://red.eltex.loc/
+redmine.key = 0b3aa7dfbfbd134ce4235992225ef6bc63b9d5cf
+redmine.user_id = 186
+redmine.project_name = SSW
+add_tags = SSW
+
+[redmine.eltex.ECSS-10]
+service = redmine
+redmine.url = http://red.eltex.loc/
+redmine.key = 0b3aa7dfbfbd134ce4235992225ef6bc63b9d5cf
+redmine.user_id = 186
+redmine.project_name = ECSS-10
+add_tags = ECSS

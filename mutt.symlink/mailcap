@@ -1,1 +1,6 @@
 text/html; w3m -I %{charset} -T text/html; copiousoutput
+text/*; vim '%s';
+application/x-gunzip; vim '%s';
+application/x-tar-gz; vim '%s';
+application/zip; vim '%s';
+

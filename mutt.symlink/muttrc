@@ -3,7 +3,17 @@
 #
 source "~/.mutt/keybindings"
 source "~/.mutt/color"
-source "~/.mutt/accounts"
+
+folder-hook 'eltex.loc' 'source ~/.mutt/account.eltex'
+folder-hook 'gmail.com' 'source ~/.mutt/account.gmail'
+
+source "~/.mutt/account.eltex"
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.eltex<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+
+account-hook eltex.loc 'set imap_user=andrey.teplyashin@mail.eltex.loc'
+account-hook gmail.com 'set imap_user=platinumthinker@gmail.com'
 
 #Set default editor
 set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'  

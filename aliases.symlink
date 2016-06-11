@@ -40,12 +40,26 @@ agm() { /usr/bin/ag "module\($@"; }
 agb() { /usr/bin/ag "behaviour\($@"; }
 alias -g gr="| grep"
 
+alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
+gco_deps() { for i in ./deps/*; do cd $i; echo $i; git checkout "$@"; cd ../..; done}
+compdef _git gco_deps=git-checkout
+alias -g gr="| grep"
+alias -g u=" && echo -e \"\a\""
+
+# For rebar
+alias ruc='fd up && rebar compile'
+alias r='rebar clean get-deps compile'
+alias rc='rebar compile'
+alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
+
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
 # Aliases for dir
 hash -d erlslib='/usr/lib/erlang/lib'
 hash -d erlhlib='/home/thinker/erlware/lib'
-hash -d d='/home/thinker/develop/repos/'
-hash -d a='/home/thinker/develop/repos/all/deps/'
+hash -d repos='/home/thinker/develop/repos/'
+hash -d all='/home/thinker/develop/repos/all/deps/'
+hash -d releses='/home/thinker/develop/repos/releses/'
+hash -d free_repos='/home/thinker/develop/free_repos/'
 
 alias vas='vim src/$(basename $(pwd)).app.src'
 alias va='vim ebin/$(basename $(pwd)).app'
@@ -59,7 +73,6 @@ rmbigdir() {ls -f $1 | xargs -n 100 rm}
 tophistory() {history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
 create_tar() {tar -zcvf $(basename $1).tar.gz $1}
 
-alias dia='dialyzer -n $(find deps -maxdepth 1 -mindepth 1 -type d -printf " -pa %p"| sed "/^\.$/d") $(find deps -name "*.beam" -printf " %p")'
 alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle'
 alias mtr='mtr --curses'
 alias git_status_on='git config --add oh-my-zsh.hide-status 0'
@@ -68,13 +81,46 @@ alias git_status_off='git config --add oh-my-zsh.hide-status 1'
 alias jenkins='java -jar /home/thinker/develop/jenkins-cli.jar -s http://biser.eltex.loc'
 alias last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
 alias last_docker_id='docker ps -l -q'
-last_ssh() { ssh-keygen -f ~/.ssh/known_hosts -R \[$(last_ip)\]:8023 && sshpass -p $2 ssh -o StrictHostKeyChecking=no -p 8023 $1@$(last_ip) ${@:3}}
+last_ssh() {
+    ssh-keygen -f ~/.ssh/known_hosts -R \[$(last_ip)\]:8023 && \
+    sshpass -p $2 ssh -o StrictHostKeyChecking=no -p 8023 $1@$(last_ip) ${@:3}
+}
+
 alias last_logs='docker logs $(last_docker_id)'
-alias dialyzer_deps='dialyzer --output_plt deps.plt --build_plt --apps $(find deps -maxdepth 1 -mindepth 1 -type d -not -name "*rebar_vsn_plugin" -printf " %p"| sed "/^\.$/d") -r deps > deps_dializer.log'
-alias dialyzer_app='dialyzer -r ./ebin/ -I ./include/ $(find deps -maxdepth 1 -mindepth 1 -type d -not -name "*rebar_vsn_plugin" -printf " -pa %p"| sed "/^\.$/d") --plts ./deps.plt ~/.dialyzer_plt --fullpath -Wno_return > dialyzer.log'
+alias dialyzer_init='rm -rf deps || true && fd up && wget -O rebar.config.script -q ftp://biser.eltex.loc/rebar.config.script1 && for i in deps/*; do [ ! -f "./$i/rebar.config.script" ] && cp ./rebar.config.script ./$i/rebar.config.script; done && DIALYZER_CHECK_PT_OPTIONS=ok rebar co build-plt dialyze' 
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias :q='echo It is not vim'
 alias gl='git pull && git submodule update --init --recursive'
 alias ssw_run='docker run -it --rm --hostname=ecss1 --add-host broker.remote:127.0.0.1 --privileged=true -v /dev/bus/usb:/dev/bus/usb -v $PWD:/rel -v /lib/modules:/lib/modules -p 443:443/tcp -p 4000-4030:4000-4030/udp -p 8000:8000/tcp -p 8086:8086/tcp -p 9999:9999/tcp -p 5060:5060/tcp -p 5060:5060/udp ssw_deploy /bin/bash'
+
 alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps && xmodmap ~/.xmodmaprc'
-# vim: set ft=sh:
+
+link_to_local() {
+ local FILE=$(readlink -f $1)
+ local DST=/usr/local/bin/$(basename "$FILE")
+ if [ -f "$DST" ]; then
+    echo "Already exist $DST"
+    fail
+ else
+    echo "Link $FILE to $DST"
+    sudo ln -s "$FILE" "$DST"
+ fi
+}
+
+alias cdlast='cd "$(find . -maxdepth 1 -type d | sort | tail -1)"'
+docker_image_clean() {
+    for i in $(docker images | grep "\<none\>" | awk '{print $3}'); do
+        docker rmi $i
+    done
+}
+
+docker_container_clean() {
+    docker rm $(docker ps -a -q)
+}
+
+alias w='curl http://wttr.in/Novosibirsk'
+vs() {
+ vim "+:Ack $1"
+}
+
+alias TERMINAL='lxterm'

@@ -5,14 +5,15 @@ xterm*utf8:               2
 xterm*eightBitInput:      true
 xterm*saveLines:          10000
 xterm*scrollKey:          true
-xterm*scrollTtyOutput:    false
-xterm*scrollBar:          false
-xterm*rightScrollBar:     false
+xterm*scrollTtyOutput:    true
+xterm*scrollBar:          true
+xterm*rightScrollBar:     true
 xterm*jumpScroll:         true
 xterm*multiScroll:        true
-xterm*toolBar:            false
+xterm*toolBar:            true
 Xterm*clientDecoration:   none
 xterm*bellIsUrgent:       true
+xterm.vt100.metaSendsEscape:  true
 
 !!================================XFT SETTINGS================================
 Xft.dpi:        96
@@ -23,7 +24,7 @@ Xft.hintstyle:  hintlight
 Xft.lcdfilter:  lcddefault
 Xft.autohint:   true
 
-URxvt*scrollBar:                       false
+URxvt*scrollBar:                       true
 URxvt*saveLines:                       10000
 URxvt*cursorBlink:                     false
 URxvt*font:                            xft:Dejavu Sans Mono for Powerline:size=10
