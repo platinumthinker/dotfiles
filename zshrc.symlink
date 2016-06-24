@@ -56,19 +56,19 @@ export EDITOR=/usr/bin/vim
 # export VISUAL=/usr/bin/gvim
 
 if [ -n "$DISPLAY" ]; then
-	export BROWSER=/usr/bin/iceweasel
+	export BROWSER=/usr/bin/firefox
 else
 	export BROWSER=/usr/bin/w3m
 fi
 
-export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
+# export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
 # export PATH=$HOME/bin:$PATH:/home/thinker/scripts:PATH
 # export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts:PATH
 # export PATH=$HOME/bin:$PATH:/home/thinker/scripts:/home/thinker/develop/android-studio/bin
 # export PATH=$HOME/bin:/home/thinker/erlware/bin:$PATH:/home/thinker/scripts
 export PATH=$HOME/bin:$PATH:/home/thinker/scripts:/home/thinker/develop/free_repos/dasht/bin
 export ERL_LIBS=~/develop/repos/private_lib/
-export CDPATH=$CDPATH:/home/thinker:/home/thinker/develop/:/home/thinker/develop/repos/:/home/thinker/develop/repos/all/deps/
+export CDPATH=$CDPATH:/home/thinker:/home/thinker/develop/:/home/thinker/develop/repos/:/home/thinker/develop/repos/ecss_all/deps/
 export TERM=xterm-256color
 
 # Preferred editor for local and remote sessions
@@ -81,6 +81,8 @@ export TERM=xterm-256color
 # Vi mode
 #set -o vi
 #bindkey -v
+# For shift-tab
+bindkey '^[[Z' reverse-menu-complete
 
 ## Proxy settings
 #export http_proxy="http://user:password@proxy-server:port"
