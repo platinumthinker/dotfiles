@@ -48,9 +48,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found debian git man gnu-utils history rebar docker systemd history-substring-search colored-man-pages common-aliases copybuffer copydir copyfile kubectl golang)
+plugins=(command-not-found debian git man gnu-utils history rebar docker systemd history-substring-search colored-man-pages common-aliases copybuffer copydir copyfile kubectl golang rebar3)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 export DESKTOP_SESSION=awesome
@@ -115,3 +116,7 @@ export RELX="relx -l $ERL_LIBS --dev-mode"
 export DIALYZER_CHECK_PT_OPTIONS="on"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export __GL_YIELD="USLEEP"
+export __GL_THREADED_OPTIMIZATIONS=1
+
+export SDL_JOYSTICK_DEVICE=/dev/input/js0
