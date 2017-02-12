@@ -1,0 +1,2 @@
+nmap d :bdelete<Space>-select<Space>lastactive<CR>
+:set gui=nonavigation
