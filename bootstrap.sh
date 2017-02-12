@@ -65,5 +65,10 @@ install_dotfiles_root()
 }
 
 install_dotfiles
-install_dotfiles_root
+#install_dotfiles_root
+git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+sh -s /bin/zsh
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install
+
 success "All installed!"

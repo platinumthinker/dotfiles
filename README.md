@@ -3,9 +3,8 @@
 ##INSTALL
 Run this:
 ```sh
-git clone git@bitbucket.org:platinumthinker/dotfiles.git ~/.dotfiles
+git clone https://github.com/platinumthinker/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-sudo ./scripts/install_all.sh
 ./bootstrap.sh
 ```
 
