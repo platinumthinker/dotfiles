@@ -12,6 +12,10 @@ source "~/.mutt/account.eltex"
 macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.eltex<enter><change-folder>!<enter>'
 macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
 
+set new_mail_command="notify-send 'New Email in %f' '%n new messages, %u unread.' &"
+set beep_new=yes
+set smart_wrap=yes
+
 account-hook eltex.loc 'set imap_user=andrey.teplyashin@mail.eltex.loc'
 account-hook gmail.com 'set imap_user=platinumthinker@gmail.com'
 
@@ -30,6 +34,7 @@ hdr_order date from to cc subject
 
 # Specifies how to sort messages in the index menu.
 set sort=threads
+set sort_aux=date-received
 
 unset bounce_delivered
 
