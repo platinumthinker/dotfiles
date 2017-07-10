@@ -13,6 +13,7 @@ macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.eltex<ente
 macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
 
 set new_mail_command="notify-send 'New Email in %f' '%n new messages, %u unread.' &"
+
 set beep_new=yes
 set smart_wrap=yes
 
@@ -34,7 +35,9 @@ hdr_order date from to cc subject
 
 # Specifies how to sort messages in the index menu.
 set sort=threads
-set sort_aux=date-received
+set sort_aux=last-date-received
+# Collapse all thread
+# folder-hook . "push <collapse-all>"
 
 unset bounce_delivered
 
@@ -60,9 +63,9 @@ attachments   -I message/external-body
 set mailcap_path = ~/.mutt/mailcap
 
 # Check for mail every minute for current IMAP mailbox every 1 min
-set timeout         = 60
+set timeout         = 20
 # Check for new mail in ALL mailboxes every 2 min
-set mail_check      = 120
+set mail_check      = 20
 # keep imap connection alive by polling intermittently (time in seconds)
 set imap_keepalive  = 300
 # allow mutt to open new imap connection automatically
@@ -70,7 +73,5 @@ unset imap_passive
 # store message headers locally to speed things up
 # (the ~/.mutt folder MUST exist! Arch does not create it by default)
 set header_cache    = ~/.mutt/hcache
-# sort mail by threads
-set sort            = threads
 
 auto_view text/html
