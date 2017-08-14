@@ -73,5 +73,14 @@ unset imap_passive
 # store message headers locally to speed things up
 # (the ~/.mutt folder MUST exist! Arch does not create it by default)
 set header_cache    = ~/.mutt/hcache
+# sort mail by threads
+set sort            = threads
+set sort_aux        = last-date-received
+# Collapse all thread
+ folder-hook . "push <collapse-all>"
+
+set new_mail_command="notify-send 'New Email in %f' '%n new messages, %u unread.' &"
+set beep_new=yes
+set smart_wrap=yes
 
 auto_view text/html
