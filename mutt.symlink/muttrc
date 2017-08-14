@@ -4,10 +4,10 @@
 source "~/.mutt/keybindings"
 source "~/.mutt/color"
 
-folder-hook 'eltex.loc' 'source ~/.mutt/account.eltex'
+# folder-hook 'eltex.loc' 'source ~/.mutt/account.eltex'
 folder-hook 'gmail.com' 'source ~/.mutt/account.gmail'
 
-source "~/.mutt/account.eltex"
+source "~/.mutt/account.gmail"
 
 macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.eltex<enter><change-folder>!<enter>'
 macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'

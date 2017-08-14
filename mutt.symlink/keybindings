@@ -16,8 +16,7 @@ bind index x sync-mailbox
 bind pager x sync-mailbox
 
 bind generic b previous-page
-bind generic 1G first-entry
-bind generic 1g first-entry
+bind generic gg first-entry
 bind generic <Home> first-entry
 bind generic G last-entry
 bind generic <End> last-entry
@@ -59,6 +58,7 @@ bind alias <Tab> next-entry
 #bind pager \CN sidebar-next
 #bind pager \CO sidebar-open
 
+bind index g noop
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
