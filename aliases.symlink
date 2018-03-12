@@ -90,7 +90,6 @@ alias mtr='mtr --curses'
 alias git_status_on='git config --add oh-my-zsh.hide-status 0'
 alias git_status_off='git config --add oh-my-zsh.hide-status 1'
 
-alias jenkins='java -jar /home/thinker/develop/jenkins-cli.jar -s http://biser.eltex.loc'
 alias last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
 alias last_docker_id='docker ps -l -q'
 last_ssh() {
@@ -103,7 +102,6 @@ alias dialyzer_init='rm -rf deps || true && fd up && wget -O rebar.config.script
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias :q='echo It is not vim'
 alias gl='git pull && git submodule update --init --recursive'
-alias ssw_run='docker run -it --rm --hostname=ecss1 --add-host broker.remote:127.0.0.1 --privileged=true -v /dev/bus/usb:/dev/bus/usb -v $PWD:/rel -v /lib/modules:/lib/modules -p 443:443/tcp -p 4000-4030:4000-4030/udp -p 8000:8000/tcp -p 8086:8086/tcp -p 9999:9999/tcp -p 5060:5060/tcp -p 5060:5060/udp ssw_deploy /bin/bash'
 
 link_to_local() {
  local FILE=$(readlink -f $1)
@@ -165,4 +163,4 @@ vs() {
  vim "+:Ack $1"
 }
 
-alias TERMINAL='lxterm'
+alias compton='compton --backend glx --vsync opengl -b'

@@ -127,3 +127,6 @@ export __GL_THREADED_OPTIMIZATIONS=1
 
 export SDL_JOYSTICK_DEVICE=/dev/input/js0
 export PATH=$PATH:/home/thinker/.cache/rebar3/bin
+export PATH=$PATH:/home/thinker/go/bin
+# export REBAR=rebar3
+export GOPATH=$HOME/go
