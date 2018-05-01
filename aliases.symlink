@@ -118,9 +118,10 @@ docker_container_clean() {
     docker rm $(docker ps -a -q)
 }
 
-alias w='curl http://wttr.in/Novosibirsk'
+alias weather='curl http://wttr.in/Novosibirsk'
 vs() {
  vim "+:Ack $1"
 }
 
 alias TERMINAL='lxterm'
+alias steam='STEAM_RUNTIME=0 steam'
