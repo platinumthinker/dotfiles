@@ -4,12 +4,11 @@ export GDK_USE_XFT=1
 export XDG_CURRENT_DESKTOP=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-xrandr --output DVI-I-1 --right-of VGA-1 --primary
-xrdb ~/.Xdefaults
-kbdd &
 xhost +local:&
-unclutter -idle 1
+setxkbmap -layout us,ru -variant -option grp:toggle \
+              terminate:ctrl_alt_bksp, ctrl:nocaps
 
-~/scripts/wal.sh
+xrdb ~/.Xdefaults
+compton --backend glx --vsync opengl -b -G -C -z -i 0&
 
 exec ck-launch-session dbus-launch --exit-with-session awesome
