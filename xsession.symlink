@@ -8,11 +8,11 @@ xhost +local:&
 setxkbmap -layout us,ru -variant -option grp:toggle \
               terminate:ctrl_alt_bksp, ctrl:nocaps
 xrandr --output DVI-I-1 --right-of VGA-1 --primary
+xfsettingsd&
 xrdb ~/.Xdefaults
+keyboard  &
 kbdd &
 unclutter -idle 1
-
-xrdb ~/.Xdefaults
 compton --backend glx --vsync opengl -b -G -C -z -i 0&
 
 exec ck-launch-session dbus-launch --exit-with-session awesome
