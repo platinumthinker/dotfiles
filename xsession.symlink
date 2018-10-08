@@ -5,14 +5,6 @@ export XDG_CURRENT_DESKTOP=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 xhost +local:&
-setxkbmap -layout us,ru -variant -option grp:toggle \
-              terminate:ctrl_alt_bksp, ctrl:nocaps
-xrandr --output DVI-I-1 --right-of VGA-1 --primary
-xfsettingsd&
-xrdb ~/.Xdefaults
-keyboard  &
-kbdd &
-unclutter -idle 1
-compton --backend glx --vsync opengl -b -G -C -z -i 0&
+feh --bg-center /home/thinker/Pictures/think_wallpaper1.png
 
-exec ck-launch-session dbus-launch --exit-with-session awesome
+exec ck-launch-session dbus-launch --exit-with-session i3
