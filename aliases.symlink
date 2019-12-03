@@ -13,14 +13,11 @@ alias c=clear
 alias r=reset
 
 alias checkinstall='checkinstall --fstrans=no --install=yes'
-alias ag='/usr/bin/ag'
 
 alias adg='sudo apt-get update && sudo apt-get --verbose-versions upgrade'
 alias ai='sudo apt-get install'
 alias ap='sudo apt-get purge'
 alias ar='sudo apt-get remove'
-
-apt_pref_compdef ai "install"
 
 alias ahi="tac /var/log/dpkg.log | grep 'install ' | less"
 alias ahu="tac /var/log/dpkg.log | grep 'upgrade'  | less"
