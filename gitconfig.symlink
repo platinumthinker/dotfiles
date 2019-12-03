@@ -1,6 +1,6 @@
 [user]
 	name = Andrey Teplyashin
-	email = andrey.teplyashin@travelping.com
+	email = andrey.teplyashin@bitfury.com
 [core]
 	editor = git
 	editor = /usr/bin/vim
@@ -40,8 +40,9 @@
     line-graphics = utf-8
     tab-size = 4
 [tig "color"]
-    title-focus = default darkcyan
-    title-blur = default darkcyan
+    ; Possible colors: white, black, green, magenta, blue, cyan, yellow, red, default
+    title-focus = default blue bold
+    title-blur = default cyan bold
     # Main view
     main-tag = red default bold
     main-local-tag = red default
@@ -51,7 +52,7 @@
     main-head = cyan default bold
     # Status view
     stat-staged = red default
-    stat-unstaged = orange default
+    stat-unstaged = yellow default
     stat-untracked = magenta default
 [rerere]
 	enabled = 1
