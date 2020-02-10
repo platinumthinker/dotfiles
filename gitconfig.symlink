@@ -5,6 +5,8 @@
 	editor = git
 	editor = /usr/bin/vim
 	excludesfile = ~/.gitignore
+[url "ssh://git@git.xdev.re"]
+    insteadOf = http://git.xdev.re
 [color]
 	ui = auto
     diff = auto

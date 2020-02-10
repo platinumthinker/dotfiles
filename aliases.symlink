@@ -3,7 +3,7 @@ alias ll="ls -l"
 alias la='ls -la'
 alias l='ls -CF'
 alias tmux='TERM=screen-256color-bce tmux'
-alias cal='ncal -b -M'
+alias cal='cal -m'
 cl() { cd "$@" && l; }
 alias cdu='cd $(ls -rtd */ | tail -1)'
 alias h='history'
@@ -80,7 +80,7 @@ alias vimlight='VIM_LIGHT_COLOR=true vim'
 alias sshwork='ssh -A -t think-cloud ssh -A -t think-eltex'
 
 rmbigdir() {ls -f $1 | xargs -n 100 rm}
-tophistory() {history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
+tophistory() {history | awk '{CMD[$3]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
 create_tar() {tar -zcvf $(basename $1).tar.gz $1}
 
 alias mtr='mtr --curses'
@@ -161,3 +161,6 @@ vs() {
 }
 
 alias compton='compton --backend glx --vsync opengl -b'
+wiki() {
+ w3m 'https://wiki.archlinux.org/index.php/'$1
+}

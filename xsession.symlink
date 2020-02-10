@@ -5,6 +5,6 @@ export XDG_CURRENT_DESKTOP=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 xhost +local:&
-feh --bg-center /home/thinker/Pictures/think_wallpaper1.png
+feh --bg-scale /home/thinker/Pictures/think_wallpaper1.png
 
-exec ck-launch-session dbus-launch --exit-with-session i3
+exec awesome

@@ -45,15 +45,16 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found git man gnu-utils history rebar docker brew history-substring-search colored-man-pages common-aliases copybuffer copydir copyfile kubectl golang)
+
+plugins=(command-not-found git man gnu-utils history rebar docker history-substring-search colored-man-pages common-aliases copybuffer copydir copyfile kubectl golang)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 export DESKTOP_SESSION=awesome
@@ -135,3 +136,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH:$HOME/go/bin:/Applications/Wire
 
 # export REBAR=rebar3
 export GOPATH=$HOME/go
+
+export GOPROXY=direct
+export GOSUMDB=off
+export GOPRIVATE=git.xdev.re
