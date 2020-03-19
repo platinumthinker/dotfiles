@@ -48,19 +48,7 @@ alias r='rebar clean get-deps compile'
 alias rc='rebar compile'
 alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
 
-alias -g gr="| grep"
-
-alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
-gco_deps() { for i in ./deps/*; do cd $i; echo $i; git checkout "$@"; cd ../..; done}
-compdef _git gco_deps=git-checkout
-alias -g gr="| grep"
 alias -g u=" && echo -e \"\a\""
-
-# For rebar
-alias ruc='fd up && rebar compile'
-alias r='rebar clean get-deps compile'
-alias rc='rebar compile'
-alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
 
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
 # Aliases for dir
@@ -89,6 +77,7 @@ alias git_status_off='git config --add oh-my-zsh.hide-status 1'
 
 alias last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
 alias last_docker_id='docker ps -l -q'
+
 last_ssh() {
     ssh-keygen -f ~/.ssh/known_hosts -R \[$(last_ip)\]:8023 && \
     sshpass -p $2 ssh -o StrictHostKeyChecking=no -p 8023 $1@$(last_ip) ${@:3}
@@ -160,7 +149,6 @@ vs() {
  vim "+:Ack $1"
 }
 
-alias compton='compton --backend glx --vsync opengl -b'
 wiki() {
  w3m 'https://wiki.archlinux.org/index.php/'$1
 }
