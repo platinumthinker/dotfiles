@@ -15,7 +15,7 @@ for MNT_PATH in $(findmnt --types nfs4 --output "target" --noheadings --raw); do
         continue;
     fi
     # Check if the server is reachable
-    timeout 1 bash -c ": < /dev/tcp/${ADDR}1/2049" || {
+    timeout 1 bash -c ": < /dev/tcp/${ADDR}/2049" || {
         echo "UnReachible $MNT_PATH"
         umount -f -l "$MNT_PATH"
     }
