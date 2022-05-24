@@ -1,6 +1,6 @@
-#Dot files and useful scripts
+# Dotfiles and useful scripts
 
-##INSTALL
+## INSTALL
 Run this:
 ```sh
 git clone https://github.com/platinumthinker/dotfiles.git ~/.dotfiles
@@ -8,7 +8,7 @@ cd ~/.dotfiles
 ./bootstrap.sh
 ```
 
-##SCRIPT
+## SCRIPT
 Contents a folder for my scripts:
 
 * battery.sh: Viewer charge and wear battery's
@@ -24,16 +24,16 @@ Contents a folder for my scripts:
 * xmonad-start: Autostart programs and xmonad
 * dmpc: Dmenu based MPD client
 
-##FONTS
+## FONTS
 Use DejaVu_Sans_Mono_for_Powerline font for render fancy symbols (vim lightline)
 
-##RESOURSES
+## RESOURSES
 Run xrdb .Xdefaults for add solorized color in terminal
 
-##TOOLS
+## TOOLS
 * workrave: For remind time breaks
 * clipman: Keyboard buffers manager
 * youtube-dl: Downloader from youtube
 
-##GTK THEMES
+## GTK THEMES
 Based on XFCE (gtk2.0, gtk3.0) and Solorized project (http://ethanschoonover.com/solarized) Dark and light.
