@@ -7,7 +7,7 @@ ZSH_THEME="kennethreitz"
 
 DISABLE_AUTO_UPDATE="true"
 DISABLE_LS_COLORS="true"
-DISABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -19,15 +19,17 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 FAST_PLUGINS=(
+    "archlinux"
     "command-not-found"
-    "git"
-    "gnu-utils"
-    "docker"
-    "docker-compose"
-    "history-substring-search"
     "common-aliases"
     "copybuffer"
     "copyfile"
+    "docker"
+    "docker-compose"
+    "git"
+    "gnu-utils"
+    "history-substring-search"
+    "nmap"
 )
 
 for plugin ($FAST_PLUGINS); do
