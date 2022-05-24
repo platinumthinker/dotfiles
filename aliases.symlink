@@ -12,17 +12,6 @@ zipdelete() { zipinfo -1 "$@" | xargs -d '\n' rm; }
 alias c=clear
 alias r=reset
 
-alias checkinstall='checkinstall --fstrans=no --install=yes'
-
-alias adg='sudo apt-get update && sudo apt-get --verbose-versions upgrade'
-alias ai='sudo apt-get install'
-alias ap='sudo apt-get purge'
-alias ar='sudo apt-get remove'
-
-alias ahi="tac /var/log/dpkg.log | grep 'install ' | less"
-alias ahu="tac /var/log/dpkg.log | grep 'upgrade'  | less"
-alias ahr="tac /var/log/dpkg.log | grep 'remove'   | less"
-
 alias du="du -h"
 alias dh="dh -h"
 
@@ -30,42 +19,13 @@ alias -g g="| grep"
 # Visual bell (urgency)
 alias -g u=" && echo -e \"\a\""
 
-alias eman="erl -man"
-
-# search module with silverseacher
-agm() { /usr/bin/ag "module\($@"; }
-agb() { /usr/bin/ag "behaviour\($@"; }
-
-alias ctags-erl='ctags --file-scope=no -R --languages=erlang'
-gco_deps() { for i in ./deps/*; do cd $i; echo $i; git checkout "$@"; cd ../..; done}
 compdef _git gco_deps=git-checkout
-alias -g gr="| grep"
-alias -g u=" && echo -e \"\a\""
-
-# For rebar
-alias ruc='fd up && rebar compile'
-alias r='rebar clean get-deps compile'
-alias rc='rebar compile'
-alias erldump='awk -v threshold=20 -f /home/thinker/develop/repos/private_lib/recon/script/queue_fun.awk'
-
-alias -g u=" && echo -e \"\a\""
 
 graphviz() {dot "$@" -Tps | /usr/bin/gv -}
-# Aliases for dir
-hash -d erlslib='/usr/lib/erlang/lib'
-hash -d erlhlib='/home/thinker/erlware/lib'
-hash -d repos='/home/thinker/develop/repos/'
-hash -d all='/home/thinker/develop/repos/all/deps/'
-hash -d releses='/home/thinker/develop/repos/releses/'
-hash -d free_repos='/home/thinker/develop/free_repos/'
-
-alias vas='vim src/$(basename $(pwd)).app.src'
-alias va='vim ebin/$(basename $(pwd)).app'
 
 alias random_pswd='apg -a 1'
 
 alias vimlight='VIM_LIGHT_COLOR=true vim'
-alias sshwork='ssh -A -t think-cloud ssh -A -t think-eltex'
 
 rmbigdir() {ls -f $1 | xargs -n 100 rm}
 tophistory() {history | awk '{CMD[$3]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10}
@@ -75,49 +35,32 @@ alias mtr='mtr --curses'
 alias git_status_on='git config --add oh-my-zsh.hide-status 0'
 alias git_status_off='git config --add oh-my-zsh.hide-status 1'
 
-alias last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
-alias last_docker_id='docker ps -l -q'
+alias docker_last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
+alias docker_last_id='docker ps -l -q'
 
-last_ssh() {
-    ssh-keygen -f ~/.ssh/known_hosts -R \[$(last_ip)\]:8023 && \
-    sshpass -p $2 ssh -o StrictHostKeyChecking=no -p 8023 $1@$(last_ip) ${@:3}
-}
-
-alias last_logs='docker logs $(last_docker_id)'
-alias dialyzer_init='rm -rf deps || true && fd up && wget -O rebar.config.script -q ftp://biser.eltex.loc/rebar.config.script1 && for i in deps/*; do [ ! -f "./$i/rebar.config.script" ] && cp ./rebar.config.script ./$i/rebar.config.script; done && DIALYZER_CHECK_PT_OPTIONS=ok rebar co build-plt dialyze' 
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
-alias :q='echo It is not vim'
-alias gl='git pull && git submodule update --init --recursive'
-
-link_to_local() {
- local FILE=$(readlink -f $1)
- local DST=/usr/local/bin/$(basename "$FILE")
- if [ -f "$DST" ]; then
-    echo "Already exist $DST"
-    fail
- else
-    echo "Link $FILE to $DST"
-    sudo ln -s "$FILE" "$DST"
- fi
-}
-
-alias cdlast='cd "$(find . -maxdepth 1 -type d | sort | tail -1)"'
+alias docker_last_logs='docker logs $(docker_last_id)'
 docker_image_clean() {
     for i in $(docker images | grep "\<none\>" | awk '{print $3}'); do
         docker rmi $i
     done
+
 }
 
 docker_container_clean() {
     docker rm $(docker ps -a -q)
 }
 
-alias weather='curl http://wttr.in/Novosibirsk'
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias :q='echo It is not vim'
+alias gl='git pull && git submodule update --init --recursive'
+alias bigpkg="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
+
+alias cdlast='cd "$(find . -maxdepth 1 -type d | sort | tail -1)"'
+
 vs() {
  vim "+:Ack $1"
 }
 
-alias TERMINAL='lxterm'
 alias steam='STEAM_RUNTIME=0 steam'
 alias keyboard='setxkbmap -layout us,ru -variant -option grp:rwin_toggle ctrl:nocaps && xmodmap ~/.xmodmaprc'
 
@@ -133,22 +76,76 @@ link_to_local() {
  fi
 }
 
-alias cdlast='cd "$(find . -maxdepth 1 -type d | sort | tail -1)"'
-docker_image_clean() {
-    for i in $(docker images | grep "\<none\>" | awk '{print $3}'); do
-        docker rmi $i
-    done
-}
-
-docker_container_clean() {
-    docker rm $(docker ps -a -q)
-}
-
-alias w='curl http://wttr.in/Novosibirsk'
-vs() {
- vim "+:Ack $1"
+w() {
+    if [ $# -eq 0 ]; then
+        curl http://wttr.in/Novosibirsk\?T
+    else
+        curl http://wttr.in/$1\?T
+    fi
 }
 
 wiki() {
  w3m 'https://wiki.archlinux.org/index.php/'$1
+}
+
+get_tasks() {
+    pushd ~/develop/ptsecurity
+    JSQL="assignee = currentUser() AND resolution = Unresolved order by updated DESC"
+    for i in $(jira list --query="$JSQL"  --template json | jq --raw-output '.issues[].key'); do
+        if [ -d "$i" ]; then
+            continue
+        fi
+        git clone git@gitlab.ptsecurity.com:cybsi/cybsi.git "$i"
+        pushd ./"$i"
+        git checkout -b "$i"
+    done
+    popd
+}
+
+clean_tasks() {
+    pushd ~/develop/ptsecurity
+    mkdir -p done_task
+    JSQL="assignee = currentUser() AND resolution = Done order by updated DESC"
+    for i in $(jira list --query="$JSQL"  --template json | jq --raw-output '.issues[].key'); do
+        if [ -d "$i" ]; then
+            echo "Move $i"
+            mv "$i" ./done_task
+        fi
+    done
+    popd
+}
+
+show_task() {
+    TASK=$(basename "$PWD")
+    jira view "$TASK"
+}
+
+load_env() {
+    ENVFILE=$1
+    if [ -f "$ENVFILE" ]; then
+       set -o allexport 
+       source "$ENVFILE"
+       set +o allexport 
+    else
+        echo "Set exist envfile: $1"
+    fi
+}
+
+create_token() {
+    GIT_REPO=$(git remote get-url origin)
+    if [ "$GIT_REPO" = "git@gitlab.ptsecurity.com:cybsi/cybsi.git" ]; then
+        if [ -f ".env" ]; then
+            load_env .env
+        fi
+
+        if [ -f ./bin/cybsi ]; then
+            ./bin/cybsi user create a --use-all-roles --access-level=Red --full-name "A" --email "a@a.com"
+            TOKEN=$(./bin/cybsi gen-token --use-all-roles --access-level Red a)
+            export BEARER="Authorization: Bearer $TOKEN"
+        else
+            echo "Dont find ./bin/cybsi"
+        fi
+    else
+        echo "Need cybsi project"
+    fi
 }

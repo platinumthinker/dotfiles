@@ -5,12 +5,13 @@ readonly WORKDIR=$(dirname "$(readlink -f "$0")")
 readonly FILE_TRIGGER=$HOME/.color
 
 switch_to_dark() {
-    "$WORKDIR"/xfce4-color-switch.sh solarized-dark
+    "$WORKDIR"/xfce4-color-switch.sh gruvbox-dark
     echo "dark" > "$FILE_TRIGGER"
 }
 
 switch_to_light() {
-    "$WORKDIR"/xfce4-color-switch.sh solarized-light
+    # "$WORKDIR"/xfce4-color-switch.sh solarized-light
+    "$WORKDIR"/xfce4-color-switch.sh gruvbox
     echo "light" > "$FILE_TRIGGER"
 }
 

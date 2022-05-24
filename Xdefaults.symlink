@@ -22,7 +22,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintlight
 Xft.lcdfilter:  lcddefault
-Xft.autohint:   true
+Xft.autohint:   false
 
 URxvt*scrollBar:                       true
 URxvt*saveLines:                       10000

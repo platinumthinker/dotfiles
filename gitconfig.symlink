@@ -1,6 +1,12 @@
 [user]
-	name = Andrey Teplyashin
-	email = andrey.teplyashin@bitfury.com
+	name = Platinum Thinker
+	email = platinumthinker@gmail.com
+[includeIf "gitdir:~/develop/gcore/"]
+    path = ~/develop/gcore/gitconfig
+[includeIf "gitdir:~/develop/ptsecurity/"]
+    path = ~/develop/ptsecurity/gitconfig
+[url "ssh://git@gitlab.ptsecurity.com/"]
+    insteadOf = https://gitlab.ptsecurity.com/
 [core]
 	editor = git
 	editor = /usr/bin/vim
@@ -58,3 +64,7 @@
     stat-untracked = magenta default
 [rerere]
 	enabled = 1
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+[init]
+	defaultBranch = master

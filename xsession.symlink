@@ -4,10 +4,11 @@ export GDK_USE_XFT=1
 export XDG_CURRENT_DESKTOP=gnome
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-pulseaudio &
+#pulseaudio &
 
 xhost +local:&
-feh --bg-scale /home/thinker/Pictures/think_wallpaper1.png
-bash /home/thinker/.xprofile &
+#feh --bg-scale /home/thinker/Pictures/think_wallpaper1.png
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
 
 exec awesome
