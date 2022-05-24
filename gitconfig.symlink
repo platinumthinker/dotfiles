@@ -26,6 +26,8 @@
     user = platinumthinker
 [pull]
     rebase = true
+[rebase]
+    autoStash = true
 [alias]
     lg = log --abbrev-commit --decorate --pretty=oneline
     dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%ar%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
