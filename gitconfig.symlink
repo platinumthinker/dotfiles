@@ -1,18 +1,14 @@
 [user]
 	name = Platinum Thinker
 	email = platinumthinker@gmail.com
-[includeIf "gitdir:~/develop/gcore/"]
-    path = ~/develop/gcore/gitconfig
-[includeIf "gitdir:~/develop/ptsecurity/"]
-    path = ~/develop/ptsecurity/gitconfig
-[url "ssh://git@gitlab.ptsecurity.com/"]
-    insteadOf = https://gitlab.ptsecurity.com/
 [core]
 	editor = git
 	editor = /usr/bin/vim
 	excludesfile = ~/.gitignore
-[url "ssh://git@git.xdev.re"]
-    insteadOf = http://git.xdev.re
+[diff]
+    renames = true
+[includeIf "gitdir:~/develop/ptsecurity/"]
+    path = ~/develop/ptsecurity/gitconfig
 [color]
 	ui = auto
     diff = auto
@@ -70,3 +66,5 @@
 	helper = /usr/lib/git-core/git-credential-libsecret
 [init]
 	defaultBranch = master
+[gist]
+	home = /home/ate/.cache/gister

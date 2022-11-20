@@ -8,6 +8,11 @@ cd ~/.dotfiles
 ./bootstrap.sh
 ```
 
+## TODO
+* Replace bootstrap.sh on GNU Stow
+* Bootstrap systemd user droplets for autostart
+
+
 ## SCRIPT
 Contents a folder for my scripts:
 

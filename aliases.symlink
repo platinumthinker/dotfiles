@@ -35,6 +35,11 @@ alias mtr='mtr --curses'
 alias git_status_on='git config --add oh-my-zsh.hide-status 0'
 alias git_status_off='git config --add oh-my-zsh.hide-status 1'
 
+docker_ip() {
+    local CONTAINER=$1
+    docker inspect "$CONTAINER" --format '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+}
+
 alias docker_last_ip='docker inspect --format {{.NetworkSettings.IPAddress}} $(docker ps -l -q)'
 alias docker_last_id='docker ps -l -q'
 
@@ -48,6 +53,10 @@ docker_image_clean() {
 
 docker_container_clean() {
     docker rm $(docker ps -a -q)
+}
+
+docker_volume_clean() {
+    docker volume rm $(docker volume ls | awk '{print $2}')
 }
 
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
@@ -84,25 +93,37 @@ w() {
     fi
 }
 
+w2() {
+    if [ $# -eq 0 ]; then
+        curl http://v2.wttr.in/Novosibirsk\?T
+    else
+        curl http://v2.wttr.in/$1\?T
+    fi
+}
+
 wiki() {
  w3m 'https://wiki.archlinux.org/index.php/'$1
 }
 
-get_tasks() {
+tasks_get() {
     pushd ~/develop/ptsecurity
     JSQL="assignee = currentUser() AND resolution = Unresolved order by updated DESC"
     for i in $(jira list --query="$JSQL"  --template json | jq --raw-output '.issues[].key'); do
         if [ -d "$i" ]; then
             continue
         fi
-        git clone git@gitlab.ptsecurity.com:cybsi/cybsi.git "$i"
+        echo -n "\n\n Fetch $i\n"
+        git clone --recursive git@gitlab.ptsecurity.com:cybsi/cybsi.git "$i"
         pushd ./"$i"
         git checkout -b "$i"
+        make api-spec
+        popd
+        echo "============================="
     done
     popd
 }
 
-clean_tasks() {
+tasks_clean() {
     pushd ~/develop/ptsecurity
     mkdir -p done_task
     JSQL="assignee = currentUser() AND resolution = Done order by updated DESC"
@@ -115,7 +136,7 @@ clean_tasks() {
     popd
 }
 
-show_task() {
+task_show() {
     TASK=$(basename "$PWD")
     jira view "$TASK"
 }
@@ -131,21 +152,4 @@ load_env() {
     fi
 }
 
-create_token() {
-    GIT_REPO=$(git remote get-url origin)
-    if [ "$GIT_REPO" = "git@gitlab.ptsecurity.com:cybsi/cybsi.git" ]; then
-        if [ -f ".env" ]; then
-            load_env .env
-        fi
-
-        if [ -f ./bin/cybsi ]; then
-            ./bin/cybsi user create a --use-all-roles --access-level=Red --full-name "A" --email "a@a.com"
-            TOKEN=$(./bin/cybsi gen-token --use-all-roles --access-level Red a)
-            export BEARER="Authorization: Bearer $TOKEN"
-        else
-            echo "Dont find ./bin/cybsi"
-        fi
-    else
-        echo "Need cybsi project"
-    fi
-}
+alias youtrack="$HOME/.config/yarn/global/node_modules/youtrack-cli/bin/youtrack.js"
